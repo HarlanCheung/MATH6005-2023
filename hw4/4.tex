@@ -1,0 +1,220 @@
+\documentclass[12pt, a4paper, oneside]{ctexart}
+\usepackage{amsmath, amsthm, amssymb, bm, color, framed, graphicx, hyperref, mathrsfs}
+\usepackage{amsfonts}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lfoot{}%这条语句可以让页码出现在下方
+
+
+\title{\textbf{第四次课程作业}}
+\author{张浩然 023082910001}
+\date{\today}
+\linespread{1.5}
+\definecolor{shadecolor}{RGB}{241, 241, 255}
+\newcounter{problemname}
+\newenvironment{problem}{\begin{shaded}\stepcounter{problemname}\par\noindent\textbf{题目\arabic{problemname}. }}{\end{shaded}\par}
+\newenvironment{solution}{\par\noindent\textbf{解答. }}{\par}
+\newenvironment{note}{\par\noindent\textbf{题目\arabic{problemname}的注记. }}{\par}
+
+\begin{document}
+
+\maketitle
+
+\begin{problem}
+    5.设
+    \begin{equation*}
+        A=
+        \begin{pmatrix}
+            1 & 1 & 2 \\
+            0 & 1 & 1 \\
+            1 & 3 & 4 
+        \end{pmatrix}
+    \end{equation*}
+    求 A 的四个相关子空间.
+\end{problem}
+
+
+\begin{solution}
+    $
+    (A,I)=
+    \begin{pmatrix}
+        1 & 1 & 2 & 1 & 0 & 0 \\
+        0 & 1 & 1 & 0 & 1 & 0 \\
+        1 & 3 & 4 & 0 & 0 & 1 
+    \end{pmatrix}
+    \stackrel{elementary transformation}{\longrightarrow}
+    \begin{pmatrix}
+        1 & 0 & 1 & 1 & -1 & 0 \\
+        0 & 1 & 1 & 0 & 1 & 0 \\
+        0 & 0 & 0 & -1 & -2 & 1 
+    \end{pmatrix}
+    =(H_A,P)
+    $
+
+    由此，$PA=H_A,r(A)=2$
+
+    可知$A$前两列线性无关
+
+    因此
+
+    $R(A)=span[(1,0,1)^T,(1,1,3)^T]$
+    
+    $R(A^T)=R(H_A^T)=span[(1,0,1)^T,(0,1,1)^T]$
+
+    $N(A)=N(H_A)=span[(1,1,-1)^T]$
+
+    $N(A^T)=\left\{x|xA=0\right\} = span[(1,2,-1)^T]$
+
+
+\end{solution}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}
+    7.设$V$是所有$n$阶实数矩阵按矩阵的加法和数乘作成的实线性空间，$U$是$V$中所有迹为零的矩阵的集合.证明$U$是$V$的子空间，并求$U$的维数和一个补空间.
+\end{problem}
+
+
+\begin{solution}
+    \begin{proof}
+        $\forall A,B \in U , tr(A+B)=tr(A)+tr(B)=0$
+    
+        $\therefore A+B \in U$
+    
+        $\forall C \in U , \lambda \in \mathbb{F}, tr(\lambda C)=\lambda tr(C)=0$
+    
+        $\therefore \lambda C \in U$
+
+        $\therefore U$是$V$的子空间.
+    \end{proof}
+    $dim(V)=n^2$
+
+    由于$trace=0$是线性限制，因此$U$的自由度减小$1$
+    
+    $dim(U)=n^2-1$
+
+    考虑$W=\left\{cI|c \in \mathbb{R}\right\} $
+
+    显然$W$是$V$的子空间，且$U$和$W$正交
+
+    $dim(W)=1$
+
+    $dim(V)=dim(U)+dim(W)$
+
+    因此$W$即为所求子空间.
+\end{solution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}
+    8.设$V$是所有次数小于$n$的实系数多项式组成的实线性空间，$U=\left\{f(x)\in V:f(1)=0 \right\}$.证明$U$是$V$的子空间，并求$V$的一个补空间.
+\end{problem}
+\begin{solution}
+    \begin{proof}
+        $\forall f_1,f_2 \in U, f_1(1)+f_2(1)=0$
+
+        $\therefore f_1+f_2 \in U$
+
+        $\forall f_3 \in U , \lambda \in \mathbb{F}, \lambda f_3(1)=0$
+
+        $\therefore \lambda f_3 \in U$
+
+        因此$U$是$V$的一个子空间.
+
+    \end{proof}
+    设 $W:\left\{cx^n|c \in \mathbb{R}\right\} $
+    
+    易知$W$是$V$的一个子空间
+
+    $dim(V)=n,dim(U)=n-1,dim(W)=1$
+
+    $\therefore dim(V)=dim(U)+dim(W)$
+
+    因此$W$即为所求子空间.
+\end{solution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}
+    9.设$U=\left[(1,2,3,6)^T,(4,-1,3,6)^T,(5,1,6,12)^T\right] $，$W=\left[(1,-1,1,1)^T,(2,-1,4,5)^T\right] $是$\mathbb{R}^4$的两个子空间.
+    \begin{enumerate}
+        \item  求$U\cap W$的基；
+        \item 扩充$U\cap W$的基,使其成为$U$的基；
+        \item 扩充$U\cap W$的基,使其成为$W$的基；
+        \item 求$U+W$的基.
+    \end{enumerate}
+\end{problem}
+
+\begin{solution}
+    (1).令$V=U+W$
+    
+    $A=
+    \begin{pmatrix}
+        1 & 4 & 5 & 1 & 2 \\
+        2 & -1 & 1 & -1 & -1 \\
+        3 & 3 & 6 & 1 & 4 \\
+        6 & 6 & 12 & 1 & 5
+    \end{pmatrix}$
+
+    经初等行变换后得
+
+    $A \rightarrow
+    \begin{pmatrix}
+        1 & 0 & 1 & 0 & \frac{7}{9} \\
+        0 & 1 & 1 & 0 & -\frac{4}{9} \\
+        0 & 0 & 0 & 1 & 3 \\
+        0 & 0 & 0 & 0 & 0
+    \end{pmatrix}$
+
+    由此得出$(1,2,3,6)^T,(4,-1,3,6)^T,(1,-1,1,1)^T$是 $V$ 的一组基.
+
+    $dim(V)=3$
+
+    易知$dim(U)=2,dim(W)=2$
+
+    因此$dim(U \cap W)=dim(U)+dim(W)-dim(V)=1$
+
+    因此要求$U \cap W$的基，只需要求其一个非零向量即可；
+
+    设$U=[\alpha_1,\alpha_2,\alpha_3],W=[\beta_1,\beta_2]$
+
+    因此$\beta_2$可以由$\alpha_1,\alpha_2,\beta_1$线性表示.
+
+    $x_1\alpha_1+x_2\alpha_2+x_3\beta_1=\beta_2$
+
+    方程组解为$(\frac{7}{9},-\frac{4}{9},3)$
+
+    因此$-3\beta_1+\beta_2=(-1,2,1,2)^T$是$U\cap W$的基.
+
+    (2).$(-1,2,1,2)^T,(1,2,3,6)^T$
+
+    (3).$(-1,2,1,2)^T,(1,-1,1,1)^T$
+
+    (4).$(-1,2,1,2)^T,(1,2,3,6)^T,(1,-1,1,1)^T$
+\end{solution}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}
+    10.设$U=\left\{(x,y,z,w):x+y+z+w=0\right\},W=\left\{(x,y,z,w):x-y+z-w=0\right\}  $求$U \cap W,U+W$的维数与基.
+\end{problem}
+
+\begin{solution}
+    $dim(U)=dim(W)=3$
+
+    设$\alpha \in U \cap W$
+
+    $
+    \begin{cases}
+        x+y+z+w=0\\
+        x-y+z-w=0
+    \end{cases}
+    $
+
+    $\therefore U\cap W$ 的一组基为$(1,0,-1,0),(0,1,0,-1)$
+
+    $\therefore dim(U\cap W)=2$
+
+    $\therefore dim(U+W)=4$
+
+    $\therefore U+W$的一组基为$\mathbb{F}^4$的一组标准基.
+\end{solution}
+% \begin{note}
+%     这里是注记. 
+% \end{note}
+
+\end{document}

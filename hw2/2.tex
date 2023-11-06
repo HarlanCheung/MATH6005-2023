@@ -1,0 +1,125 @@
+\documentclass[12pt, a4paper, oneside]{ctexart}
+\usepackage{amsmath, amsthm, amssymb, bm, color, framed, graphicx, hyperref, mathrsfs}
+\usepackage{amsfonts}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lfoot{}%这条语句可以让页码出现在下方
+
+
+\title{\textbf{第二次课程作业}}
+\author{张浩然 023082910001}
+\date{\today}
+\linespread{1.5}
+\definecolor{shadecolor}{RGB}{241, 241, 255}
+\newcounter{problemname}
+\newenvironment{problem}{\begin{shaded}\stepcounter{problemname}\par\noindent\textbf{题目\arabic{problemname}. }}{\end{shaded}\par}
+\newenvironment{solution}{\par\noindent\textbf{解答. }}{\par}
+\newenvironment{note}{\par\noindent\textbf{题目\arabic{problemname}的注记. }}{\par}
+
+\begin{document}
+
+\maketitle
+
+\begin{problem}
+     21.证明\textbf{例1.4.2}中的$(V,\oplus ,\cdot )$是$\mathbb{R} $上的线性空间.
+     
+     (\textbf{例1.4.2}设$V=$ $\{$所有正实数$\}$，$\mathbb{F}=\mathbb{R}$是实数域.定义$V$中的加法运算为$x\oplus y=xy$(即通常的实数乘法)；定义$V$中元素与$\mathbb{F}$中数的数乘运算为$k \cdot x=x^k$(通常的幂运算).那么$(V,\oplus ,\cdot )$是实线性空间.)
+\end{problem}
+
+
+\begin{solution}
+    封闭性:对于$V$中的任意元素$x,y$,及实数$k$,有$x\oplus y = xy \in V$,且$k\cdot x = x^k \in V$,所以满足封闭性。
+
+    交换律:对于$V$中的任意元素$x,y$,及实数$k$,有$x\oplus y = xy = yx = y \oplus x$,且$k\cdot x = x^k = (k\cdot x)$,所以满足交换律。
+
+    结合律:对于$V$中的任意元素$x,y,z$,及实数$k,h$,有$x\oplus(y\oplus z) = x(yz) = (xy)z = (x\oplus y)\oplus z$,且$k\cdot(h \cdot x) = (x^h)^k = x^{hk} = (kh)\cdot x$,所以满足结合律。
+
+    单位元素:取$1 \in V$,对于任意$x\in V$,有$x\oplus 1 = x1 = x$,且$1\cdot x = x^1 = x$,所以1是加法单位元和乘法单位元。
+
+    逆元素:对于任意$x\in V$,取$x^{-1}$为其逆元素,有$x \oplus x^{-1} = xx^{-1} = 1$,且$x^{-1}\cdot x = x^{x^{-1}} = 1$,所以满足逆元素存在性。
+
+    乘法封闭性:对于任意$x\in V$,及实数$k,h$,有$k\cdot(h\cdot x) = (x^h)^k = x^{hk} = (kh)\cdot x$,所以满足乘法封闭性。
+
+    综上所述,该集合$V$满足线性空间的所有条件,所以是$\mathbb{R}$上的一个线性空间。
+\end{solution}
+
+
+\begin{problem}
+    27.证明过渡矩阵必是可逆矩阵.
+\end{problem}
+
+
+\begin{solution}
+    过渡矩阵是两组基之间的变换矩阵，每组基中的向量是线性无关的，所以基构成的矩阵是满秩的.
+    因此对于$A=PB$，其中$A$,$B$分别是两个基构成的矩阵，$P$是过渡矩阵.显然$A$,$B$是可逆的，所以$AB^{-1}=P$.又因为$A$,$B^{-1}$可逆，因此$P$可逆。
+\end{solution}
+
+\begin{problem}
+    30.对$x=(x_1,x_2)^T,y=(y_1,y_2)^T$,规定
+    \begin{equation*}
+        (x,y)=ax_1y_1+bx_1y_2+bx_2y_1+cx_2y_2
+    \end{equation*}
+
+    证明$(x,y)$是$\mathbb{R}^2$的内积$\Leftrightarrow a>0,ac>b^2$.
+
+\end{problem}
+\begin{solution}
+    设$x = (x_1,x_2)^T$,$y = (y_1,y_2)^T$,定义内积
+    $(x,y) = ax_1y_1 + bx_1y_2 + by_1x_2 + cx_2y_2$
+
+    (1) 正定性:
+    当$x\neq 0$时,$(x,x) = ax_1^2 + 2bx_1x_2 + cx_2^2 > 0 \Leftrightarrow a>0, ac>b^2$
+
+    当$x=0$时,$(x,x) = 0$
+
+    所以满足正定性。
+
+    (2) 对称性:
+    $(x,y) = ay_1x_1 + by_2x_1 + bx_2y_1 + cy_2x_2 = (y,x)$
+
+    所以满足对称性。
+
+    (3) 线性性:
+    设$\alpha,\beta \in \mathbb{R} $,则
+    $(\alpha x+\beta y,z) = a(\alpha x_1+\beta y_1)z_1 + b(\alpha x_1+\beta y_1)z_2 + b(\alpha x_2+\beta y_2)z_1 + c(\alpha x_2+\beta y_2)z_2$
+    $= \alpha(ax_1z_1 + bx_1z_2 + bx_2z_1 + cx_2z_2) + \beta (ay_1z_1 + by_1z_2 + by_2z_1 + cy_2z_2)$
+    $= \alpha(x,z) + \beta (y,z)$
+
+    $(c(\alpha x+\beta y),z) = cac(\alpha x_1+\beta y_1)z_1 + cbc(\alpha x_1+\beta y_1)z_2 + cbc(\alpha x_2+\beta y_2)z_1 + c^2c(\alpha x_2+\beta y_2)z_2$
+    $= c\alpha(ax_1z_1 + bx_1z_2 + bx_2z_1 + cx_2z_2) + c\beta(ay_1z_1 + by_1z_2 + by_2z_1 + cy_2z_2)$
+
+    $= c\alpha(x,z) + c\beta (y,z)$
+
+    所以满足线性性。
+
+    综上所述，$(x,y)$是$\mathbb{R}^2$的内积$\Leftrightarrow a>0,ac>b^2$.
+\end{solution}
+
+\begin{problem}
+   31.设$V=\{a \cos t+b \sin t:$其中$a,b$为任意实数$ \}$是实二维线性空间.对任意$f,g\in V$,定义
+   \begin{equation*}
+    (f,g)=f(0)g(0)+f( \frac{\pi}{2})g(\frac{\pi}{2}).
+   \end{equation*}
+
+   证明$(f,g)$是$V$上的内积，并求$h(t)=3\cos(t+7)+4\sin(t+9)$的长度.
+\end{problem}
+
+\begin{solution}
+    1、正定性：当$f\neq 0$时，$(f,f)=a^2+b^2\geq 0$;当$f=0$时，$(f,f)=0$
+
+    2、对称性：$(f,g)=f(0)g(0)+f( \frac{\pi}{2})g(\frac{\pi}{2})=a_f \cos t a_g \cos t+b_f \sin t b_g \sin t=(g,f)$
+    
+    3、线性性：$(\alpha f+\beta g,h)=\alpha a_f a_h+ \beta a_g a_h+ \alpha b_f b_h +\beta b_g b_h=\alpha(a_f a_h+b_f b_h)+\beta(a_g a_h+b_g b_h)=\alpha(f,h)+\beta(g,h)$
+
+    $h(0)=3\cos7+4\sin9,h(\frac{\pi}{2}=4cos9-3sin7)$
+
+    $(h,h)=h(0)^2+h(\frac{\pi}{2})^2=25+24\sin2$
+
+    因此$h(t)$的长度为$\sqrt{25+24\sin2}$
+\end{solution}
+
+% \begin{note}
+%     这里是注记. 
+% \end{note}
+
+\end{document}

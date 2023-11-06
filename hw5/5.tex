@@ -1,0 +1,222 @@
+\documentclass[12pt, a4paper, oneside]{ctexart}
+\usepackage{amsmath, amsthm, amssymb, bm, color, framed, graphicx, hyperref, mathrsfs}
+\usepackage{amsfonts}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lfoot{}%这条语句可以让页码出现在下方
+
+
+\title{\textbf{第五次课程作业}}
+\author{张浩然 023082910001}
+\date{\today}
+\linespread{1.5}
+\definecolor{shadecolor}{RGB}{241, 241, 255}
+\newcounter{problemname}
+\newenvironment{problem}{\begin{shaded}\stepcounter{problemname}\par\noindent\textbf{题目\arabic{problemname}. }}{\end{shaded}\par}
+\newenvironment{solution}{\par\noindent\textbf{解答. }}{\par}
+\newenvironment{note}{\par\noindent\textbf{题目\arabic{problemname}的注记. }}{\par}
+
+\begin{document}
+
+\maketitle
+
+\begin{problem}
+     15.若$\sigma(\alpha_1),\sigma(\alpha_2),\cdots ,\sigma(\alpha_s)$线性相关,证明或否定$\alpha_1,\alpha_2,\cdots,\alpha_s$也线性相关.
+\end{problem}
+
+
+\begin{solution}
+    假设 $\sigma\left(\alpha_1\right), \sigma\left(\alpha_2\right), \ldots, \sigma\left(\alpha_s\right)$ 线性相关。这意味着存在不全为零的系数 $c_1, c_2, \ldots, c_s$ 使得
+    $$
+    c_1 \sigma\left(\alpha_1\right)+c_2 \sigma\left(\alpha_2\right)+\ldots+c_s \sigma\left(\alpha_s\right)=0
+    $$
+
+    设 $\sigma$ 是一个线性变换, 我们可以提取系数:
+    $$
+    \sigma\left(c_1 \alpha_1+c_2 \alpha_2+\ldots+c_s \alpha_s\right)=0
+    $$
+
+    如果 $c_1 \alpha_1+c_2 \alpha_2+\ldots+c_s \alpha_s$ 是非零向量, 那么我们就得到了 $\sigma$ 将一个非零向量映射到零向量, 这意味着 $\sigma$ 不是单射, 即不是一一映射.
+
+    如果 $c_1 \alpha_1+c_2 \alpha_2+\ldots+c_s \alpha_s$ 是零向量，那么这意味着 $\alpha_1, \alpha_2, \ldots, \alpha_s$ 线性相关.
+
+    因此不能确定是否线性相关.
+\end{solution}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}
+    25.分别求导数运算 $\partial: f(x) \mapsto f^{\prime}(x)$ 在标准基 $1, x, x^2, \cdots, x^{n-1}$ 与基 $1,(x-a),(x-$ $a)^2, \cdots,(x-a)^{n-1}$ 下的矩阵. 问 $\partial$ 的行列式与迹是多少? 解释之.
+\end{problem}
+
+
+\begin{solution}
+    对于标准基 $\left\{1, x, x^2, \ldots, x^{n-1}\right\}$, 导数运算 $\partial$ 的作用是:
+    $$
+    \begin{aligned}
+    \partial(1) & =0 \\
+    \partial(x) & =1 \\
+    \partial\left(x^2\right) & =2 x \\
+    \vdots & \\
+    \partial\left(x^{n-1}\right) & =(n-1) x^{n-2}
+    \end{aligned}
+    $$
+
+    将这些结果用标准基表示, 矩阵 $A$ 为:
+    $$
+    A=\begin{pmatrix}
+    0 & 1 & 0 & \cdots & 0 \\
+    0 & 0 & 2 & \cdots & 0 \\
+    0 & 0 & 0 & \ddots & 0 \\
+    \vdots & \vdots & \vdots & \ddots & n-2 \\
+    0 & 0 & 0 & \cdots & 0
+    \end{pmatrix}
+    $$
+
+    对于基 $\left\{1,(x-a),(x-a)^2, \ldots,(x-a)^{n-1}\right\}$ ，导数运算 $\partial$ 的作用是:
+    $$
+    \begin{aligned}
+    \partial(1) & =0 \\
+    \partial(x-a) & =1 \\
+    \partial\left((x-a)^2\right) & =2(x-a) \\
+    \vdots & \\
+    \partial\left((x-a)^{n-1}\right) & =(n-1)(x-a)^{n-2}
+    \end{aligned}
+    $$
+
+    将这些结果用 $\left\{1,(x-a),(x-a)^2, \ldots,(x-a)^{n-1}\right\}$ 基表示，矩阵 $B$ 为:
+    $$
+    B=\begin{pmatrix}
+    0 & 1 & 0 & \cdots & 0 \\
+    0 & 0 & 2 & \cdots & 0 \\
+    0 & 0 & 0 & \ddots & 0 \\
+    \vdots & \vdots & \vdots & \ddots & n-2 \\
+    0 & 0 & 0 & \cdots & 0
+    \end{pmatrix}
+    $$
+
+    行列式和迹均为 $0$,导数运算只是降低了多项式的阶数，并没有缩放或者拉伸这个空间.
+\end{solution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}
+    27.(1)求例2.2.22中的幂零变换$\tau$的幂零指数及其在标准基下的矩阵;
+    
+    (2)设$\sigma,\tau \in EndV$分别是线性空间$V$的同构变换和幂零变换,证明$\sigma+\tau$是$V$的同构变换;
+
+    (3)设$A,D$是可逆矩阵,$B,C$是幂零矩阵,证明分块矩阵$
+    \begin{pmatrix}
+        A & B \\
+        C & D
+    \end{pmatrix}$可逆.
+    
+    \textbf{例 2.2.22}设 $V=\mathbb{F}^n$. 对 $\alpha=\left(x_1, x_2, \cdots, x_n\right)^{\mathrm{T}}$, 定义
+    $$
+    \sigma(\alpha)=\left(x_1, 0, \cdots, 0\right)^{\mathrm{T}} ; \quad \tau(\alpha)=\left(x_2, x_3, \cdots, x_n, 0\right)^{\mathrm{T}} .
+    $$
+    
+    则 $\sigma$ 与 $\tau$ 均是 $V$ 的线性变换, 且 $\sigma$ 是幂等变换, $\tau$ 是幕零变换.(幂零指数是多少?)
+\end{problem}
+
+\begin{solution}
+    (1).$$\alpha=\left(x_1, x_2 \cdots x_n\right)^T$$
+    $$
+    \begin{aligned}
+    & T^{n-1}(\alpha)=\left(x_n, 0 \cdots 0\right)^T\\
+    & T^n(\alpha)=0 \\
+    & \therefore T \text { 的幂零指数为 } n
+    \end{aligned}
+    $$
+    在标准基下的矩阵为
+    $$
+    A=\begin{pmatrix}
+        0 & 1 & 0 & \cdots & 0 \\
+        0 & 0 & 1 & \cdots & 0 \\
+        0 & 0 & 0 & \ddots & 0 \\
+        \vdots & \vdots & \vdots & \ddots & 1 \\
+        0 & 0 & 0 & \cdots & 0
+    \end{pmatrix}
+    $$
+    (2).没证出来
+    (3).没证出来
+\end{solution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}
+   29.设 $V=\mathbb{R}^3, \sigma(x, y, z)=(x+2 y-z, y+z, x+y-2 z)$. 求
+
+    (1) $\sigma$ 的核与像空间的基与维数;
+    
+    (2) $\sigma$ 的行列式与迹.
+\end{problem}
+
+\begin{solution}
+    (1).求核空间的基,即为解方程组
+    $$
+    \begin{aligned}
+        x+2y-z=0 \\
+        y+z=0 \\
+        x+y-2z=0
+    \end{aligned}
+    $$
+    求得$$x=3z,y=-z$$
+
+    因此核空间的基为$(3,-1,1)$,维数为 $1$.
+
+    $\sigma$用矩阵表示为$
+    A=\begin{pmatrix}
+        1 & 2 & -1 \\
+        0 & 1 & 1 \\
+        1 & 1 & -2
+    \end{pmatrix}$
+
+    计算$A$的列空间得
+
+    像空间的基为$(1,0,1)^T,(2,1,1)^T$,维数是 2
+
+    (2). $det(A)=0,tr(A)=0$
+\end{solution}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}
+    32. 设 $V=\mathbb{R}[x]_n$, 其上的内积为
+$$
+(f(x), g(x))=\int_0^1 f(x) g(x) \mathrm{d} x .
+$$
+
+设 $U=\{f(x) \in V: f(0)=0\}$.
+
+(1) 证明 $U$ 是 $V$ 的一个 $n-1$ 维子空间, 并求 $U$ 的一组基;
+
+(2) 当 $n=3$ 时, 求 $U$ 的正交补 $U^{\perp}$.
+\end{problem}
+
+\begin{solution}
+    (1).   
+    \begin{enumerate}
+        \item \textbf{非空}:\( U \) 包含零多项式,因为零多项式在 \( x = 0 \) 处的值为 0.
+        \item \textbf{封闭性}:对于任意 \( f(x), g(x) \in U \) 和任意标量 \( \alpha, \beta \),我们有 \( \alpha f(x) + \beta g(x) \in U \).这是因为 \( (\alpha f + \beta g)(0) = \alpha f(0) + \beta g(0) = 0 \).
+        \item \textbf{标量乘法}:对于任意 \( f(x) \in U \) 和任意标量 \( \alpha \)，我们有 \( \alpha f(x) \in U \).这是因为 \( (\alpha f)(0) = \alpha f(0) = 0 \).
+    \end{enumerate}
+
+    \( U \) 的一个基是 \( \{x, x^2, \ldots, x^{n-1}\} \).
+
+    (2).
+    当 \( n = 3 \) 时,\( V \) 是所有次数不超过 2 的多项式的集合,\( U \) 的一组基是 \( \{x, x^2\} \).
+
+    $$
+    \begin{aligned}
+    \int_{0}^{1} f(x) \cdot x \, dx &= 0 \\
+    \int_{0}^{1} f(x) \cdot x^2 \, dx &= 0
+    \end{aligned}
+    $$
+
+    其中 \( f(x) \) 是一个次数不超过 2 的多项式,可以表示为 \( f(x) = ax^2 + bx + c \).
+
+    解方程组得 \( a = \frac{10}{3}c \) 和 \( b = -4c \),其中 \( c \) 是任意实数.
+
+    因此,\( U^\perp \) 是由多项式 \( \frac{10}{3}x^2 - 4x + 1 \) 张成的一维空间.
+
+\end{solution}
+% \begin{note}
+%     这里是注记. 
+% \end{note}
+
+\end{document}

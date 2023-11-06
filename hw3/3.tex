@@ -1,0 +1,204 @@
+\documentclass[12pt, a4paper, oneside]{ctexart}
+\usepackage{amsmath, amsthm, amssymb, bm, color, framed, graphicx, hyperref, mathrsfs}
+\usepackage{amsfonts}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lfoot{}%这条语句可以让页码出现在下方
+
+
+\title{\textbf{第三次课程作业}}
+\author{张浩然 023082910001}
+\date{\today}
+\linespread{1.5}
+\definecolor{shadecolor}{RGB}{241, 241, 255}
+\newcounter{problemname}
+\newenvironment{problem}{\begin{shaded}\stepcounter{problemname}\par\noindent\textbf{题目\arabic{problemname}. }}{\end{shaded}\par}
+\newenvironment{solution}{\par\noindent\textbf{解答. }}{\par}
+\newenvironment{note}{\par\noindent\textbf{题目\arabic{problemname}的注记. }}{\par}
+
+\begin{document}
+
+\maketitle
+
+\begin{problem}
+     32.(1).设欧式空间$\mathbb{R}_{[x]_2}$中的内积为
+     \begin{equation*}
+        (f,g)= \int_{-1}^1 f(x)g(x)\mathrm{d}x
+     \end{equation*}
+    求基$1,t,t^2$的度量矩阵。
+\end{problem}
+
+
+\begin{solution}
+    首先我们计算基之间的内积，代入求得：
+    \begin{equation*}
+        (1,1)=\int_{-1}^1 1 \mathrm{d}t=2
+    \end{equation*}
+    \begin{equation*}
+        (t,t)=\int_{-1}^1 t^2 \mathrm{d}t= \frac{2}{3}
+    \end{equation*}
+    \begin{equation*}
+        (t^2,t^2)=\int_{-1}^1 t^4 \mathrm{d}t= \frac{2}{5}
+    \end{equation*}
+    \begin{equation*}
+        (1,t)=(t,1)=\int_{-1}^1 t \mathrm{d}t= 0
+    \end{equation*}
+    \begin{equation*}
+        (1,t^2)=(t^2,1)=\int_{-1}^1 t^2 \mathrm{d}t= \frac{2}{3}
+    \end{equation*}
+    \begin{equation*}
+        (t,t^2)=(t^2,t)=\int_{-1}^1 t^3 \mathrm{d}t= 0
+    \end{equation*}
+    所以度量矩阵为：
+    $
+    \begin{pmatrix}
+        2 & 0 & \frac{2}{3} \\
+        0 & \frac{2}{3} & 0 \\
+        \frac{2}{3} & 0 & \frac{2}{5} 
+    \end{pmatrix}
+    $.                                                    
+\end{solution}
+
+
+\begin{problem}
+    37.在欧式空间$\mathbb{R}^4$中，求三个向量$\alpha_1=(1,0,1,1)^T$,$\alpha_2=(2,1,0,-3)^T$和$\alpha_3=(1,-1,1,-1)^T$所生成的子空间的一个标准正交基。
+\end{problem}
+
+
+\begin{solution}
+    $\alpha_1$标准化得：
+    \begin{equation*}
+        \beta_1=\alpha_1=(1,0,1,1)^T/\sqrt{3}
+    \end{equation*}
+    做向量$\alpha_2$在向量$\beta_1$方向上的投影，并做差标准化得：
+    \begin{equation*}
+        \beta_2=\alpha_2-\frac{(\beta_1,\alpha_2)}{(\beta_1,\beta_1)}\beta_1=(7,3,1,-8)^T/\sqrt{123}
+    \end{equation*}
+    做向量$\alpha_3$在向量$\beta_1,\beta_2$方向上的投影，并做差标准化得：
+    \begin{equation*}
+        \beta_3=\alpha_3-\frac{(\beta_1,\alpha_3)}{(\beta_1,\beta_1)}\beta_1-\frac{(\beta_2,\alpha_3)}{(\beta_2,\beta_2)}\beta_2=(3,54,-23,20)^T/\sqrt{3854}
+    \end{equation*}
+    $\beta_1,\beta_2,\beta_3$即为一组标准正交基.
+\end{solution}
+
+\begin{problem}
+    42.设线性空间$V=\mathbb{R}^2$是欧式空间(未必是通常的欧式空间).设$\alpha_1=(1,1)^T,\alpha_2=(1,-1)^T$与$\beta_1=(0,2)^T,\beta_2=(6,12)^T$是$V$的两组基.设$\alpha_j$与$\beta_k$的内积分别为
+    \begin{equation*}
+        (\alpha_1,\beta_1)=1,(\alpha_1,\beta_2)=15,(\alpha_2,\beta_1)=-1,(\alpha_2,\beta_2)=3
+    \end{equation*}
+
+    (1).求两组基的度量矩阵;
+
+    (2).求$V$的一个标准正交基.
+\end{problem}
+\begin{solution}
+    (1).利用内积的性质可得
+    \begin{equation*}
+        (\alpha_1,\alpha_1)=(\alpha_1,\frac{1}{6}\beta_2-\frac{1}{2}\beta_1)=2
+    \end{equation*}
+    同理，$(\alpha_1,\alpha_2)=1,(\alpha_2,\alpha_2)=2,(\beta_1,\beta_1)=2,(\beta_1,\beta_2)=12,(\beta_2,\beta_2)=126$
+    所以两组基的度量矩阵分别为：
+    $
+    \begin{pmatrix}
+        2 & 1 \\
+        1 & 2
+    \end{pmatrix}
+    $
+    ,
+    $
+    \begin{pmatrix}
+        2 & 12 \\
+        12 & 126
+    \end{pmatrix}
+    $
+
+    (2).
+    将$\alpha_1$标准化后得$\gamma_1=(1,1)^T/\sqrt{2}$
+    做向量$\alpha_2$在向量$\gamma_1$方向上的投影，并做差得：
+    \begin{equation*}
+        \gamma_2=\alpha_2-\frac{(\gamma_1,\alpha_2)}{(\gamma_1,\gamma_1)}\gamma_1=(\frac{1}{2},-\frac{3}{2})
+    \end{equation*}
+    \begin{equation*}
+        (\gamma_2,\gamma_2)=(\alpha_2-\frac{1}{2}\alpha_1,\alpha_2-\frac{1}{2}\alpha_1)=(\alpha_2,\alpha_2)-(\alpha_2,\alpha_1)+\frac{1}{4}(\alpha_1,\alpha_1)=\frac{3}{2}
+    \end{equation*}
+    $(\frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2})^T,(\frac{\sqrt{6}}{6},-\frac{\sqrt{6}}{2})^T$是$V$的一个标准正交基.
+\end{solution}
+
+\begin{problem}
+    44.设$A$是\textbf{反对称}实矩阵(即$A^T=-A$)，证明：
+
+    (1).$A$的特征值为$0$或纯虚数；
+
+    (2).设$\alpha+\beta i$是$A$的属于一个非零特征值的特征向量，其中$\alpha,\beta$均为实向量，则$\alpha$与$\beta$正交.
+
+\end{problem}
+
+\begin{solution}
+    \begin{proof}
+        (1).设$A$的特征值和特征向量分别为$\lambda, v$
+        可知
+        \begin{equation*}
+            Av=\lambda v
+        \end{equation*}
+        同时取共轭转置得
+        \begin{equation*}
+            (Av)^*=v^*A^*=\overline{\lambda}v^* =-v^*A
+        \end{equation*}
+        所以
+        \begin{equation*}
+            -v^*Av=\overline{\lambda}v^*v
+            -\lambda v^*v=\overline{\lambda}v^*v
+        \end{equation*}
+        由于$v^*v\neq 0$
+        所以$\lambda$是纯虚数或$\lambda=0$
+
+        (2).设$\lambda=ki,(k\neq 0)$
+            \begin{equation*}
+                ki(\alpha+\beta i)=A(\alpha+\beta i)
+                A\alpha+A\beta i= ki\alpha-k\beta
+            \end{equation*}
+            因此：
+            \begin{equation*}
+                A\alpha=-k\beta
+            \end{equation*}
+            两边取转置得：
+            \begin{equation*}
+                \alpha^TA^T=-k\beta^T
+            \end{equation*}
+            \begin{equation*}
+                -\alpha^TA=-k\beta^T
+            \end{equation*}
+            \begin{equation*}
+                \alpha^TA\alpha=k\beta^T\alpha
+            \end{equation*}
+            \begin{equation*}
+                -k\alpha^T\beta=k\beta^T\alpha
+            \end{equation*}
+            因此$\alpha^T\beta=\beta^T\alpha=0$,即$\alpha,\beta$正交.
+    \end{proof}
+\end{solution}
+
+\begin{problem}
+    设$A$是$Hermite$矩阵.如果对任意向量$x$均有$x^*Ax=0$,则$A=0$.
+\end{problem}
+
+\begin{solution}
+    \begin{proof}
+        设$A$的特征值为$\lambda_i$,对应的特征向量为$v_i$.所以,
+        \begin{equation*}
+            v_i^*Av_i=\lambda_i v_i^* v_i=0
+        \end{equation*}
+        由于$v_i$是特征向量不为零，所以$\lambda_i=0$
+
+        把矩阵$A$进行特征值分解得
+        \begin{equation*}
+            A=V\Lambda V^*
+        \end{equation*}
+        由于$\Lambda=0$,所以$A=0$
+    \end{proof}
+\end{solution}
+% \begin{note}
+%     这里是注记. 
+% \end{note}
+
+\end{document}

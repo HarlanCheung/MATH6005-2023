@@ -1,0 +1,403 @@
+\documentclass[12pt, a4paper, oneside]{ctexart}
+\usepackage{amsmath, amsthm, amssymb, bm, color, framed, graphicx, hyperref, mathrsfs}
+\usepackage{amsfonts}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lfoot{}%这条语句可以让页码出现在下方
+
+
+\title{\textbf{第一次课程作业}}
+\author{张浩然 023082910001}
+\date{\today}
+\linespread{1.5}
+\definecolor{shadecolor}{RGB}{241, 241, 255}
+\newcounter{problemname}
+\newenvironment{problem}{\begin{shaded}\stepcounter{problemname}\par\noindent\textbf{题目\arabic{problemname}. }}{\end{shaded}\par}
+\newenvironment{solution}{\par\noindent\textbf{解答. }}{\par}
+\newenvironment{note}{\par\noindent\textbf{题目\arabic{problemname}的注记. }}{\par}
+
+\begin{document}
+
+\maketitle
+
+\begin{problem}
+    1、计算
+
+    (1)
+    $ 
+    \begin{pmatrix}
+        cosx & sinx \\
+        -sinx & cosx
+    \end{pmatrix}^n
+    $
+    (2)
+    $
+    \begin{pmatrix}
+        1 & 1 \\
+        -1 & 1
+    \end{pmatrix}^n
+    $
+    (3)
+    $
+    \begin{pmatrix}
+        a & 1 &   &   &   \\
+          & a & 1 &   &   \\
+          &   & a & 1 &   \\
+          &   &   & a & 1 \\
+          &   &   &   & a
+    \end{pmatrix}^n
+    $
+\end{problem}
+
+\begin{solution}
+(1).记$A=
+\begin{pmatrix}
+    cosx & sinx \\
+    -sinx & cosx
+\end{pmatrix}$,
+那么$A \cdot A=
+\begin{pmatrix}
+    cos2x & sin2x \\
+    -sin2x & cos2x
+\end{pmatrix}$
+由三角函数公式可知，
+$A^n=
+\begin{pmatrix}
+    cosnx & sinnx \\
+    -sinnx & cosnx
+\end{pmatrix}$
+实际上$A$是一个旋转矩阵，$A^n$相当于将旋转角度加倍。
+
+(2).由(1)得
+
+$
+\begin{pmatrix}
+    1 & 1 \\
+    -1 & 1
+\end{pmatrix}^n
+=
+\begin{pmatrix}
+    \sqrt{2}cos\frac{\pi}{4} & \sqrt{2}sin\frac{\pi}{4} \\
+    -\sqrt{2}sin\frac{\pi}{4} & \sqrt{2}cos\frac{\pi}{4}
+\end{pmatrix}^n
+=(\sqrt{2})^n
+\begin{pmatrix}
+    cos\frac{n\pi}{4} & sin\frac{n\pi}{4} \\
+    -sin\frac{n\pi}{4} & cos\frac{n\pi}{4}
+\end{pmatrix}
+$
+
+(3).记$A=
+\begin{pmatrix}
+    a & 1 &   &   &   \\
+      & a & 1 &   &   \\
+      &   & a & 1 &   \\
+      &   &   & a & 1 \\
+      &   &   &   & a
+\end{pmatrix}$,$B=
+\begin{pmatrix}
+     0 & 1 & 0 &  0 & 0  \\
+     0 & 0  & 1 & 0  & 0  \\
+     0 & 0  & 0 & 1 &  0 \\
+     0 & 0  & 0  & 0  & 1 \\
+     0 & 0  & 0  & 0  & 0
+\end{pmatrix}$
+$B^2=
+\begin{pmatrix}
+    0 & 0 & 1 &  0 & 0  \\
+    0 & 0  & 0 & 1  & 0  \\
+    0 & 0  & 0 & 0 &  1 \\
+    0 & 0  & 0  & 0  & 0 \\
+    0 & 0  & 0  & 0  & 0
+\end{pmatrix}
+B^3=
+\begin{pmatrix}
+    0 & 0 & 0 &  1 & 0  \\
+    0 & 0  & 0 & 0  & 1  \\
+    0 & 0  & 0 & 0 &  0 \\
+    0 & 0  & 0  & 0  & 0 \\
+    0 & 0  & 0  & 0  & 0
+\end{pmatrix}
+B^4=
+\begin{pmatrix}
+    0 & 0 & 0 &  0 & 1  \\
+    0 & 0  & 0 & 0  & 0  \\
+    0 & 0  & 0 & 0 &  0 \\
+    0 & 0  & 0  & 0  & 0 \\
+    0 & 0  & 0  & 0  & 0
+\end{pmatrix}$, 所以$B^n=0(n\geq 5)$.
+那么$A=aI+B$,
+所以$A^n=(aI+B)^n=(aI)^n+C^1_n(aI)^{(n-1)}B+C^2_n(aI)^{(n-2)}B^2+C^3_n(aI)^{(n-3)}B^3+C^4_n(aI)^{(n-4)}B^4=
+\begin{pmatrix}
+    a^n &   &   &   &   \\
+      & a^n &  &   &   \\
+      &   & a^n &  &   \\
+      &   &   & a^n &  \\
+      &   &   &   & a^n
+\end{pmatrix}+
+\begin{pmatrix}
+     & na^{n-1} &   &   &   \\
+      &  & na^{n-1} &   &   \\
+      &   &  & na^{n-1} &   \\
+      &   &   &  & na^{n-1} \\
+      &   &   &   & 
+\end{pmatrix}+
+\begin{pmatrix}
+    &  &  \frac{n(n-1)}{2}a^{n-2} &   &   \\
+     &  &  &  \frac{n(n-1)}{2}a^{n-2} &   \\
+     &   &  & & \frac{n(n-1)}{2}a^{n-2}  \\
+     &   &   &  &  \\
+     &   &   &   & 
+\end{pmatrix}+
+\begin{pmatrix}
+    &  &   &  \frac{n(n-1)(n-2)}{6}a^{n-3} &   \\
+     &  &  &  & \frac{n(n-1)(n-2)}{6}a^{n-3}  \\
+     &   &  & &   \\
+     &   &   &  &  \\
+     &   &   &   & 
+\end{pmatrix}+
+\begin{pmatrix}
+      &   &   &  \frac{n(n-1)(n-2)(n-3)}{24}a^{n-4} \\
+      &  &  &   \\
+       &  & &   \\
+       &   &  &  \\
+       &   &   & 
+\end{pmatrix}=
+\begin{pmatrix}
+    a^n &  na^{n-1} & \frac{n(n-1)}{2}a^{n-2}  &  \frac{n(n-1)(n-2)}{6}a^{n-3} &  \frac{n(n-1)(n-2)(n-3)}{24}a^{n-4} \\
+      & a^n & na^{n-1} & \frac{n(n-1)}{2}a^{n-2}  &  \frac{n(n-1)(n-2)}{6}a^{n-3} \\
+      &   & a^n & na^{n-1} & \frac{n(n-1)}{2}a^{n-2}  \\
+      &   &   & a^n & na^{n-1} \\
+      &   &   &   & a^n
+\end{pmatrix}
+$
+\end{solution}
+
+\begin{problem}
+    12.设$n$阶矩阵$A$可逆，$x$，$y$是$n$维列向量.如果$(A+xy^*)^{-1}$可逆，证明\textbf{Sherman-Morrison公式}：
+    \begin{equation*}
+        (A+xy^*)^{-1} = A^{-1}-\frac{A^{-1}xy^*A^{-1}}{1+y^*A^{-1}x}
+    \end{equation*}
+\end{problem}
+
+\begin{solution}
+    假设$B=A^{-1}-\frac{A^{-1}xy^*A^{-1}}{1+y^*A^{-1}x}$
+    由于可逆矩阵的唯一性，所以要想证明\textbf{Sherman-Morrison Fomula}，即证明$(A+xy^*)B=I$即可.
+
+    $(A+xy^*)(A^{-1}-\frac{A^{-1}xy^*A^{-1}}{1+y^*A^{-1}x})=I-\frac{xy^*A^{-1}}{1+y^*A^{-1}x}+xy^*A^{-1}-\frac{xy^*A^{-1}xy^*A^{-1}}{1+y^*A^{-1}x}$
+
+    由于$y^*A^{-1}x$是一个常量，因此上式可化简为
+
+    $I+xy^*A^{-1}-\frac{xy^*A^{-1}(1+y^*A^{-1}x)}{1+y^*A^{-1}x}=I+xy^*A^{-1}-xy^*A^{-1}=I$
+    
+\end{solution}
+
+\begin{problem}
+    14.(1)设矩阵$A$，$C$均可逆，求分块矩阵$
+    \begin{pmatrix}
+        A & B \\
+        0 & C
+    \end{pmatrix}
+    $的逆矩阵.
+    (2)设矩阵$A$可逆，$D-CA^{-1}B$也可逆，证明分块矩阵$
+    \begin{pmatrix}
+        A & B \\
+        C & D
+    \end{pmatrix}
+    $ 可逆并求其逆.
+\end{problem}
+
+\begin{solution}
+    (1)设分块矩阵$
+    \begin{pmatrix}
+        A & B \\
+        0 & C
+    \end{pmatrix}
+    $的逆矩阵为$
+    \begin{pmatrix}
+        A_1 & B_1 \\
+        D_1 & C_1
+    \end{pmatrix}
+    $,则$
+    \begin{pmatrix}
+        A & B \\
+        0 & C
+    \end{pmatrix}
+    \begin{pmatrix}
+        A_1 & B_1 \\
+        D_1 & C_1
+    \end{pmatrix}=
+    \begin{pmatrix}
+        I & 0 \\
+        0 & I
+    \end{pmatrix}
+    $,即
+    $
+    \begin{cases}
+        AA_1+BD_1=I \\
+        AB_1+BC_1=0 \\
+        CD_1=0 \\
+        CC_1=I
+    \end{cases}
+    $,解得
+    $
+    \begin{cases}
+        A_1=A^{-1} \\
+        B_1= -A^{-1}BC^{-1} \\
+        C_1=C^{-1} \\
+        D_1=0
+    \end{cases}
+    $.
+
+    所以分块矩阵$
+    \begin{pmatrix}
+        A & B \\
+        0 & C
+    \end{pmatrix}
+    $的逆矩阵为$
+    \begin{pmatrix}
+        A^{-1} & -A^{-1}BC^{-1} \\
+        0 & C^{-1} 
+    \end{pmatrix}
+    $.
+
+    (2)我们根据矩阵求逆的方法，构造
+    $
+    \begin{pmatrix}
+        A & B & \vdots & I & 0 \\
+        C & D & \vdots & 0 & I
+    \end{pmatrix}
+    $
+    若经过初等变换使左边变成单位矩阵，那么右边即是逆矩阵。
+    首先第一行左乘$A^{-1}$，得
+    $
+    \begin{pmatrix}
+        I & A^{-1}B & \vdots & A^{-1} & 0 \\
+        C & D & \vdots & 0 & I
+    \end{pmatrix}
+    $
+    然后第二行减去第一行左乘$C$，得
+    $
+    \begin{pmatrix}
+        I & A^{-1}B & \vdots & A^{-1} & 0 \\
+        0 & D-CA^{-1}B & \vdots & -CA^{-1} & I
+    \end{pmatrix}
+    $
+    令$E=D-CA^{-1}B$，第二行左乘$E^{-1}$得，
+    $
+    \begin{pmatrix}
+        I & A^{-1}B & \vdots & A^{-1} & 0 \\
+        0 & I & \vdots & -E^{-1}CA^{-1} & E^{-1}
+    \end{pmatrix}
+    $
+    消去$A^{-1}B$得
+    $
+    \begin{pmatrix}
+        I & 0 & \vdots & A^{-1}+A^{-1}BE^{-1}CA^{-1} & -A^{-1}BE^{-1} \\
+        0 & I & \vdots & -E^{-1}CA^{-1} & E^{-1}
+    \end{pmatrix}
+    $
+    所求逆矩阵为
+    $
+    \begin{pmatrix}
+        A^{-1}+A^{-1}BE^{-1}CA^{-1} & -A^{-1}BE^{-1} \\
+         -E^{-1}CA^{-1} & E^{-1}
+    \end{pmatrix}
+    $，其中$E=D-CA^{-1}B$.
+\end{solution}
+
+\begin{problem}
+    17.求下列各矩阵的满秩分解：\\
+    (1)$
+    A=
+    \begin{pmatrix}
+    1 & 2 & 3 & 0 \\
+    0 & 2 & 1 & -1 \\
+    1 & 0 & 2 & 1    
+    \end{pmatrix}
+    $;
+    (2)$
+    A=    
+    \begin{pmatrix}
+        1 & -1 & 1 & 1 \\
+        -1 & 1 & -1 & -1 \\
+        -1 & -1 & 1 & 1 \\ 
+        1 & 1 & -1 & -1   
+    \end{pmatrix}
+    $.
+
+\end{problem}
+
+\begin{solution}
+    (1).$A$经过初等行变换后得
+
+    $A_1=
+    \begin{pmatrix}
+        1 & 0 & 2 & 1 \\
+        0 & 1 & \frac{1}{2} & -\frac{1}{2} \\
+        0 & 0 & 0 & 0    
+    \end{pmatrix}
+    $
+
+    $A$的极大线性无关组构成的矩阵$A_2=    
+    \begin{pmatrix}
+        1 & 2 \\
+        0 & 2  \\
+        1 & 0    
+    \end{pmatrix}
+    $
+    所以$A$的满秩分解为
+
+    $A=
+    \begin{pmatrix}
+        1 & 2 \\
+        0 & 2  \\
+        1 & 0    
+    \end{pmatrix}
+    \begin{pmatrix}
+        1 & 0 & 2 & 1 \\
+        0 & 1 & \frac{1}{2} & -\frac{1}{2} \\ 
+    \end{pmatrix}
+    $
+
+    (2).
+    $A$经过初等行变换后得
+
+    $A_1=
+    \begin{pmatrix}
+        1 & 0 & 0 & 0 \\
+        0 & 1 & -1 & -1 \\
+        0 & 0 & 0 & 0 \\ 
+        0 & 0 & 0 & 0   
+    \end{pmatrix}
+    $
+
+    $A$的极大线性无关组构成的矩阵$A_2=    
+    \begin{pmatrix}
+        1 & -1 \\
+        -1 & 1  \\
+        -1 & -1  \\
+        1 & 1  
+    \end{pmatrix}
+    $
+    所以$A$的满秩分解为
+
+    $A=
+    \begin{pmatrix}
+        1 & -1 \\
+        -1 & 1  \\
+        -1 & -1  \\
+        1 & 1  
+    \end{pmatrix}
+    \begin{pmatrix}
+        1 & 0 & 0 & 0 \\
+        0 & 1 & -1 & -1 \\
+    \end{pmatrix}
+    $
+
+\end{solution}
+% \begin{note}
+%     这里是注记. 
+% \end{note}
+
+\end{document}
