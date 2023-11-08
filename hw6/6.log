@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.9.18)  6 NOV 2023 10:20
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.9.18)  8 NOV 2023 21:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -546,6 +546,19 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 ) [1
 
 ]
+Overfull \hbox (8.34329pt too wide) in paragraph at lines 79--80
+[]\TU/SongtiSCLight(0)/m/n/12 根 据 $\OML/cmm/m/it/12 ^^K[]$ \TU/SongtiSCLight(0)/m/n/12 的 单 位 性 质 和 内 积 的 分 配 律\TU/lmr/m/n/12 , \TU/SongtiSCLight(0)/m/n/12 我 们 可 以 简 化 为\TU/lmr/m/n/12 :($\OML/cmm/m/it/12 ^^[$\TU/lmr/m/n/12 ($\OML/cmm/m/it/12 ^^K$\TU/lmr/m/n/12 )$\OML/cmm/m/it/12 ^^[$\TU/lmr/m/n/12 ($\OML/cmm/m/it/12 ^^L$\TU/lmr/m/n/12 )) =($\OML/cmm/m/it/12 ^^K$\TU/lmr/m/n/12 ,$\OML/cmm/m/it/12 ^^L$\TU/lmr/m/n/12 ) 
+ []
+
+
+Overfull \hbox (13.51039pt too wide) in paragraph at lines 93--95
+[]\TU/SongtiSCLight(0)/m/n/12 于 是 $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^[\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^K[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; ^^K[]\OT1/cmr/m/n/12 ) = [][] \OML/cmm/m/it/12 a[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^K[]; ^^K[]\OT1/cmr/m/n/12 ) = \OML/cmm/m/it/12 a[]; \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^K[]; ^^[\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^K[]\OT1/cmr/m/n/12 )) = [][] \OML/cmm/m/it/12 a[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^K[]; ^^K[]\OT1/cmr/m/n/12 ) =
+ []
+
+
+Overfull \vbox (6.82214pt too high) detected at line 108
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -553,17 +566,25 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[2] (./6.aux)
+[2]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[3] (./6.aux)
 Package rerunfilecheck Info: File `6.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 15977 strings out of 476683
- 350475 string characters out of 5804047
- 1854018 words of memory out of 5000000
- 35977 multiletter control sequences out of 15000+600000
+ 16001 strings out of 476683
+ 352099 string characters out of 5804047
+ 1857018 words of memory out of 5000000
+ 36001 multiletter control sequences out of 15000+600000
  528216 words of font info for 109 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 89i,11n,97p,1183b,363s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 89i,11n,97p,1183b,377s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 6.pdf (2 pages).
+Output written on 6.pdf (3 pages).

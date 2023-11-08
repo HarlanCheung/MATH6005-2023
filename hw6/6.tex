@@ -26,7 +26,9 @@
 
 
 \begin{solution}
-    
+    $n=2$时,$W=e_2$
+
+    $n>2$时,要求$e_1$与$W$正交,因此$W$是一个正交于$e_1$并且包含$e_2$的超平面. 
 \end{solution}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -40,16 +42,57 @@
 
 
 \begin{solution}
-    
+(1).证明 $\sigma$ 是线性变换:
+ 要证明 $\sigma$ 是线性变换, 我们需要证明两个性质: 加法性 $\sigma ( \alpha + \beta) = \sigma (  \alpha )+ \sigma( \beta ) $和齐次性
+ $\sigma (c \alpha )=c\sigma( \alpha )$,对所有 $ \alpha , \beta \in V$和所有标量$c$成立.
+ 
+ 加法性证明:
+ 
+ $\sigma(\alpha+\beta)=(\alpha+\beta)-2((\alpha+\beta), \alpha _ {0})\alpha _ {0} $
+ 
+ 展开并重新排列: $\sigma(\alpha+\beta)= \alpha  -2(  \alpha , \alpha _ {0}  ) \alpha _ {0} + \beta -2(  \beta ,\alpha _ {0}  )  \alpha _ {0} $
+ 
+ 这可以重写为: $\sigma ( \alpha + \beta) = \sigma (  \alpha )+ \sigma( \beta ) $
+ 
+ 齐次性证明:
+ 
+ $\sigma(c\alpha)=c\alpha-2(c\alpha,\alpha _ {0})\alpha _ {0}$ 
+ 
+ 因 $\alpha _ {0}$ 是单位向量,提取$c$: $\sigma(c\alpha)=c(\alpha-2(\alpha,\alpha _ {0})\alpha _ {0})$
+ 
+ 这可以重写为: $\sigma(c\alpha) =c\sigma(\alpha)$
+
+ (2).证明 $\sigma$ 是正交变换:
+
+ 正交变换是指保持向量内积不变的变换, 即($\sigma$($\alpha$)$\sigma$($\beta$)) =($\alpha$,$\beta$),对所有 $ \alpha $,$\beta$$\in $ $V$.
+ 
+ 我们需要证明 $\sigma$ 保持任意两个向量的内积不变。
+ 
+ 由于 $ \alpha _ {0} $ 是单位向量,$(\alpha _ {0},\alpha _ {0})=1$.
+ 
+ 考虑$(\sigma(\alpha),\sigma(\beta))$ :
+ 
+ $(\sigma(\alpha),\sigma(\beta))=((\alpha-2(\alpha,\alpha _ {0})\alpha _ {0})(\beta-2(\beta,\alpha _ {0})\alpha _ {0}))$
+ 
+ 展开内积:$(\sigma(\alpha),\sigma(\beta))=(\alpha,\beta)-2(\alpha,\alpha _ {0})(\alpha _ {0},\beta)-2(\beta,\alpha _ {0})(\alpha,\alpha _ {0})+4(\alpha,\alpha _ {0})(\beta,\alpha _ {0})$
+ 
+ 根据 $ \alpha _ {0} $ 的单位性质和内积的分配律, 我们可以简化为:($\sigma$($\alpha$)$\sigma$($\beta$)) =($\alpha$,$\beta$)
+ 
+ 从而证明了 $\sigma$ 保持向量内积不变, 所以它是一个正交变换。
+
 \end{solution}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{problem}
-    38.证明:欧氏空间V的线性变换 $ \sigma $ 是反对称变换(即$(\sigma(\alpha),\beta)=-(\alpha,\sigma(\beta))$) $ \Leftrightarrow $ $ \sigma $ 在V
+    38.证明:欧氏空间V的线性变换 $\sigma$ 是反对称变换(即$(\sigma(\alpha),\beta)=-(\alpha,\sigma(\beta))$) $ \Leftrightarrow $ $\sigma$ 在V
 的标准正交基下的矩阵是反对称矩阵.
 
 \end{problem}
 \begin{solution}
+    证明:设 $\sigma$ 在$V$的标准正交基 $\alpha _ {1},\alpha _ {2},\cdots,\alpha _ {n}$ 下的矩阵是$A=(a_ {ij})$.则 $\sigma(\alpha _ {i})=\sum _ {k=1}^ {n} a_ {ki} \alpha _ {k} ,1\leqslant i \leqslant  n$.
     
+    于是$(\sigma(\alpha _ {i}),\alpha _ {j})= \sum _ {k=1}^ {n}a_ {ki}(\alpha _ {k},\alpha _ {j})= a_ {ji} ,( \alpha _ {i},\sigma (\alpha _ {j}))= \sum _ {k=1}^ {n}a_ {kj}(\alpha _ {i},\alpha _ {k})= a_ {ij} $ .
+    因此 $ \sigma $ 是反对称变换当且仅当 $ a_ {ji} $ =- $ a_ {ij} $ ,即A是反对称矩阵。
+
 \end{solution}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{problem}
@@ -60,12 +103,29 @@
     s & -c
     \end{pmatrix}$,
     
-    其中 $ c^ {2} $ + $ s^ {2} $ =1.证明 $ \sigma $ 是反射变换,并计算其对称轴.
+    其中 $ c^ {2} $ + $ s^ {2} $ =1.证明 $\sigma$ 是反射变换,并计算其对称轴.
 
 \end{problem}
 
 \begin{solution}
-   
+    \begin{enumerate}
+    \item 证明 $\sigma$ 是一个反射变换：
+    \begin{itemize}
+    \item 对于变换 $\sigma$ 的任意向量 $\alpha = (x, y)$，变换后的向量是 $\sigma(\alpha) = (cx + sy, sx - cy)$。
+    \item 如果我们取 $\alpha$ 为 $(c, s)$，则 $\sigma(\alpha) = (c^2 + s^2, sc - sc) = (1, 0) = \alpha$。
+    \item 如果我们取 $\alpha$ 为 $(-s, c)$，则 $\sigma(\alpha) = (-cs - sc, s^2 - c^2) = (0, -1) = -\alpha$。
+    \item 这表明 $\sigma$ 实际上是沿着由 $(c, s)$ 定义的直线的反射。
+    \end{itemize}
+    
+    \item 计算对称轴：
+    \begin{itemize}
+    \item 对称轴是保持不变的直线，所以它必须与保持不变的向量 $(c, s)$ 平行。
+    \item 对称轴的方程可以写为 $y = mx + b$，其中斜率 $m$ 是向量 $(-s, c)$ 的 $y$ 分量除以 $x$ 分量，即 $m = \frac{c}{-s}$。
+    \item 由于 $(c, s)$ 在变换下保持不变，它也位于对称轴上，因此我们可以用它来找到 $b$。
+    \item 我们可以设置点 $(0, s)$ 和 $(c, 0)$ 在对称轴上，从而得到 $b = s$ 和 $b = 0$。综合这两点，我们得到对称轴的方程为 $y = \frac{c}{-s} x + s$。
+    \end{itemize}
+    \end{enumerate}
+    
 \end{solution}
 
 % \begin{note}
