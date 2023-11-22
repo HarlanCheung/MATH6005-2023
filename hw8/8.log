@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.9.18)  16 NOV 2023 08:39
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.9.18)  22 NOV 2023 20:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -448,8 +448,7 @@ Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
 \f@nch@O@orf=\skip76
 )
 \c@problemname=\count313
-
-No file 8.aux.
+ (./8.aux)
 \openout1 = `8.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
@@ -529,14 +528,12 @@ LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 19.
 Package hyperref Info: Link coloring OFF on input line 19.
+ (./8.out) (./8.out)
 \@outlinefile=\write3
 \openout3 = `8.out'.
 
-
-Package hyperref Warning: Rerun to get /PageLabels entry.
-
 LaTeX Font Info:    Trying to load font information for U+msa on input line 22.
-(/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 22.
@@ -548,23 +545,44 @@ LaTeX Font Info:    Trying to load font information for U+rsfs on input line 22.
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 ) [1
 
-] (./8.aux)
+]
 
-Package rerunfilecheck Warning: File `8.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-Package rerunfilecheck Info: Checksums for `8.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
+[2]
+Underfull \vbox (badness 10000) detected at line 150
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[3]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[4] (./8.aux)
+Package rerunfilecheck Info: File `8.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 15904 strings out of 476683
- 348791 string characters out of 5804047
- 1849018 words of memory out of 5000000
- 35927 multiletter control sequences out of 15000+600000
- 520281 words of font info for 75 fonts, out of 8000000 for 9000
+ 16001 strings out of 476683
+ 352099 string characters out of 5804047
+ 1861018 words of memory out of 5000000
+ 36001 multiletter control sequences out of 15000+600000
+ 528216 words of font info for 109 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 89i,6n,97p,1183b,337s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 89i,11n,97p,1183b,377s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 8.pdf (1 page).
+Output written on 8.pdf (4 pages).
