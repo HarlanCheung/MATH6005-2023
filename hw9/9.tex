@@ -1,0 +1,170 @@
+\documentclass[12pt, a4paper, oneside]{ctexart}
+\usepackage{amsmath, amsthm, amssymb, bm, color, framed, graphicx, hyperref, mathrsfs}
+\usepackage{amsfonts}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lfoot{}%这条语句可以让页码出现在下方
+
+
+\title{\textbf{第九次课程作业}}
+\author{张浩然 023082910001}
+\date{\today}
+\linespread{1.5}
+\definecolor{shadecolor}{RGB}{241, 241, 255}
+\newcounter{problemname}
+\newenvironment{problem}{\begin{shaded}\stepcounter{problemname}\par\noindent\textbf{题目\arabic{problemname}. }}{\end{shaded}\par}
+\newenvironment{solution}{\par\noindent\textbf{解答. }}{\par}
+\newenvironment{note}{\par\noindent\textbf{题目\arabic{problemname}的注记. }}{\par}
+
+\begin{document}
+
+\maketitle
+
+\begin{problem}
+    32.设$A=\begin{pmatrix}
+        0 & 0 & 1 \\
+        1 & 0 & -1 \\
+        0 & 1 & 1
+    \end{pmatrix}$.
+
+    (1)求 $A$ 的特征值以及$A^{100}$.
+\end{problem}
+
+
+\begin{solution}
+    $|\lambda I-A|=\begin{vmatrix}
+        \lambda & 0 & -1 \\
+        -1 & \lambda & 1 \\
+        0 & -1 & \lambda
+    \end{vmatrix}=\lambda^3-\lambda^2+\lambda-1=(\lambda-1)(\lambda^2+1)
+    $
+    $\therefore,A$的特征值为$\lambda_1=1,\lambda_2=i,\lambda_3=-i$.
+    $\exists P$使得$A=P\begin{pmatrix}
+        1 & 0 & 0 \\
+        0 & i & 0 \\
+        0 & 0 & -i
+    \end{pmatrix}P^{-1}$.
+    $\therefore A^{100}=P\begin{pmatrix}
+        1 & 0 & 0 \\
+        0 & i^{100} & 0 \\
+        0 & 0 & (-i)^{100}
+    \end{pmatrix}P^{-1}=I$
+\end{solution}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}
+    35.如果矩阵$A$的特征多项式和最小多项式相同，问$A$的$Jordan$标准型有何特点.
+\end{problem}
+
+
+\begin{solution}
+    设$A$的特征多项式为$\prod _{i=1}^k=(\lambda-\lambda_i)^{a_i}$,$A$的最小多项式为$\prod _{i=1}^k=(\lambda-\lambda_i)^{b_i}$.
+
+    $a_i$为$A$的$Jordan$标准型中特征值为$\lambda_i$的$Jordan$块的个数,$b_i$为$A$的$Jordan$标准型中特征值为$\lambda_i$的$Jordan$块的大小.
+
+    $a_i=b_i,\therefore A$每个不同的特征值只有一个$Jordan$块.
+\end{solution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}
+    39. 设矩阵$A=\left(\begin{array}{ccc}7 & -16 & 8 \\-16 & 7 & -8 \\8 & -8 & -5\end{array}\right)$ .
+    
+    (1) 求 $ A $ 的盖尔圆盘并利用对角相似变换改进之;
+
+    (2)同构特征多项式计算$A$的特征值并与(1)比较.
+\end{problem}
+
+\begin{solution}
+    (1).
+    $D_1:|\lambda-7|\leq 24$
+
+    $D_2:|\lambda-7|\leq 24$
+
+    $D_3:|\lambda+5|\leq 16$
+
+    对 $A$ 进行相似对角变换, $B=diag(b_1,b_2,b_3)Adiag(b_1^{-1},b_2^{-1},b_3^{-1})=
+    \begin{pmatrix}
+        7 & -16\frac{b_1}{b_2} & 8\frac{b_1}{b_3} \\
+        -16\frac{b_2}{b_1} & 7 & -8\frac{b_2}{b_3} \\
+        8\frac{b_3}{b_1} & -8\frac{b_3}{b_2} & -5
+    \end{pmatrix}$
+
+    $B$的盖尔圆盘为
+
+    $D_1:|\lambda-7|\leq 16\frac{b_1}{b_2}+8\frac{b_1}{b_3}$
+
+    $D_2:|\lambda-7|\leq 16\frac{b_2}{b_1}+8\frac{b_2}{b_3}$
+
+    $D_3:|\lambda+5|\leq 8\frac{b_3}{b_1}+8\frac{b_3}{b_2}$
+
+    我们可以使得$b_1=b_2=1,b_3=\frac{\sqrt{2}}{2}$
+
+    $\therefore D_1:|\lambda-7|\leq 16+8\sqrt{2}$
+
+    $D_2:|\lambda-7|\leq 16+8\sqrt{2}$
+
+    $D_3:|\lambda+5|\leq 8\sqrt{2}$
+
+    (2).特征多项式$|\lambda I-A|= \begin{vmatrix}
+        \lambda-7 & 16 & -8 \\
+        16 & \lambda-7 & 8 \\
+        -8 & 8 & \lambda+5
+    \end{vmatrix}=\lambda^3-9\lambda^2-405\lambda-2187=(\lambda-27)(\lambda+9)^2$\
+    
+    $\therefore A$的特征值为$\lambda_1=27,\lambda_2=-9,\lambda_3=-9$.均在范围中.
+\end{solution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}
+    40. 证明$ Hilbert$ 矩阵
+    $A=\left(\begin{array}{ccccc}2 & \frac{1}{2} & \frac{1}{2^{2}} & \cdots & \frac{1}{2^{n-1}} \\\frac{2}{3} & 4 & \frac{2}{3^{2}} & \cdots & \frac{2}{3^{n-1}} \\\frac{3}{4} & \frac{3}{4^{2}} & 6 & \cdots & \frac{3}{4^{n-1}} \\\vdots & \vdots & \vdots & & \vdots \\\frac{n}{n+1} & \frac{n}{(n+1)^{2}} & \frac{n}{(n+1)^{3}} & \cdots & 2 n\end{array}\right)$
+    
+    可以对角化, 且  $A$  的特征值都是实数.
+\end{problem}
+
+\begin{solution}
+   $D_1:|\lambda-2|\leq \frac{1}{2}+\frac{1}{2^2}+ \cdots +\frac{1}{2^{n-1}}=1-\frac{1}{2^{n-1}}$
+
+   $D_i:|\lambda-2i|\leq \frac{i}{i+1}+\frac{i}{(i+1)^2}+ \cdots +\frac{i}{(i+1)^{n-1}}=1-\frac{1}{(i+1)^{n-1}}$ 
+   
+   $D_{i+1}:|\lambda-2(i+1)|\leq 1-\frac{1}{(i+2)^{n-1}}$
+
+   $A$ 的第 $i$ 个圆盘和第 $i+1 $个圆盘不联通，所以 $A $有 $n $个两两不等的实特征值，可以对角化.
+
+
+\end{solution}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}
+    5. 设  $A$  是 $n$ 阶正规矩阵,  $x $ 是任意复数. 证明
+    
+    (1)  $A-x I $ 也是正规矩阵;
+    
+    (2) 对于任何向量 $ x $, 向量  $A x $ 与 $ A^{*} x $ 的长度相同;
+    
+    (3) $ A $ 的任一特征向量都是 $ A^{*} $ 的特征向量;
+    
+    (4) $ A $ 的属于不同特征值的特征向量正交.
+\end{problem}
+
+\begin{solution}
+    1. 
+   正规矩阵定义为 $A^*A = AA^*$。若 $A$ 是正规矩阵，我们有：
+   \[ (A - xI)^*(A - xI) = (A^* - \bar{x}I)(A - xI) = A^*A - xA^* - \bar{x}A + |x|^2I \]
+   与
+   \[ (A - xI)(A - xI)^* = (A - xI)(A^* - \bar{x}I) = AA^* - \bar{x}A - xA^* + |x|^2I \]
+   由于 $A^*A = AA^*$，因此 $(A - xI)^*(A - xI) = (A - xI)(A - xI)^*$，所以 $A - xI$ 也是正规矩阵。
+
+2. 
+   对于任何向量 $x$，有 $\|Ax\|^2 = (Ax)^*(Ax) = x^*A^*Ax$。因为 $A$ 是正规的，所以 $A^*A = AA^*$，则 $x^*A^*Ax = x^*AA^*x = \|A^*x\|^2$。因此，$\|Ax\| = \|A^*x\|$。
+
+3. 
+   假设 $v$ 是 $A$ 的一个特征向量，对应特征值 $\lambda$，即 $Av = \lambda v$。考虑 $A^*A = AA^*$，我们有 $A^*Av = A^*\lambda v = \lambda A^*v$。因此，如果 $v$ 是 $A$ 的特征向量，它也是 $A^*$ 的特征向量。
+
+4. 
+   设 $Av = \lambda v$ 和 $Aw = \mu w$，其中 $\lambda$ 和 $\mu$ 是不同的特征值。那么 $v^*Aw = v^*\mu w = \mu v^*w$ 和 $w^*Av = w^*\lambda v = \lambda w^*v$。因为 $A$ 是正规的，$v^*Aw = w^*Av$。将这两个等式合并，我们得到 $\mu v^*w = \lambda w^*v$。由于 $\lambda$ 和 $\mu$ 是不同的，$v^*w = 0$，意味着 $v$ 和 $w$ 正交。
+
+\end{solution}
+% \begin{note}
+%     这里是注记. 
+% \end{note}
+
+\end{document}
