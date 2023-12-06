@@ -1,0 +1,225 @@
+\documentclass[12pt, a4paper, oneside]{ctexart}
+\usepackage{amsmath, amsthm, amssymb, bm, color, framed, graphicx, hyperref, mathrsfs}
+\usepackage{amsfonts}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lfoot{}%这条语句可以让页码出现在下方
+
+
+\title{\textbf{第十次课程作业}}
+\author{张浩然 023082910001}
+\date{\today}
+\linespread{1.5}
+\definecolor{shadecolor}{RGB}{241, 241, 255}
+\newcounter{problemname}
+\newenvironment{problem}{\begin{shaded}\stepcounter{problemname}\par\noindent\textbf{题目\arabic{problemname}. }}{\end{shaded}\par}
+\newenvironment{solution}{\par\noindent\textbf{解答. }}{\par}
+\newenvironment{note}{\par\noindent\textbf{题目\arabic{problemname}的注记. }}{\par}
+
+\begin{document}
+
+\maketitle
+
+\begin{problem}
+    16.已知正交矩阵 $ A=\frac{1}{3}\left(\begin{array}{ccc}2 & 1 & -2 \\1 & 2 & 2 \\2 & -2 & 1\end{array}\right) $ 表示一个旋转, 求其旋转轴与旋转角. 
+\end{problem}
+
+
+\begin{solution}
+    记 $A$ 的旋转轴为 $span(x)$,
+
+    则$Ax=x$,
+
+    考虑 $(A-I)x=0$ 的解空间, 有
+
+    $A-I=\frac{1}{3}\begin{pmatrix}
+        -1 & 1 & -2\\
+        1 & -1 & 2\\
+        2 & -2 & -2
+    \end{pmatrix}$
+
+    $x=(1,1,0)$, $span(1,1,0)^T$为$A$的旋转轴.
+
+    设$B=\begin{pmatrix}
+        1 & 0 & 0\\
+        0 & \cos\theta & \sin\theta\\
+        0 & -\sin\theta & \cos\theta
+    \end{pmatrix}=Q^{-1}AQ$, 则
+
+    $tr(B)=tr(A)$
+
+    $tr(B)=1+2\cos\theta$
+
+    $tr(A)=\frac{5}{3}$
+
+    $\cos\theta=\frac{1}{3}$
+
+    $\theta=\arccos\frac{1}{3}$
+
+    
+\end{solution}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}
+    27. 设  $A=\left(\begin{array}{ll}2 & 1 \\ 1 & 1 \\ 2 & 1\end{array}\right), b=\left(\begin{array}{c}12 \\ 6 \\ 8\end{array}\right)$ .
+    
+    (1). 求 $ R(A) $ 的标准正交基;
+    
+    (2). 写出 $ A $ 的 $ Q R $ 分解;
+    
+    (3). 求 $ A x=b $ 的最小二乘解;
+    
+    (4). 证明  $u_{1}=(0,1,0)^{\mathrm{T}}, u_{2}=\left(\frac{1}{\sqrt{2}}, 0, \frac{1}{\sqrt{2}}\right)^{\mathrm{T}}  $也是  $R(A)$  的标准正交基, 其中 $ R(A) $ 为 $ A $的列空间.
+\end{problem}
+
+
+\begin{solution}
+    (1).易得$R(A)=span{(2,1,2)^T,(1,1,1)^T}=span{\alpha_1,\alpha_2}$
+
+        设$R(A)$的一组标准正交基为$u_1,u_2$, 则
+
+        $u_1=\frac{1}{3}(2,1,2)^T$
+
+        做向量$\alpha_2$在向量$u_1$方向上的投影，并做差标准化得：
+        
+        $u_2=\alpha_2-\frac{(u_1,\alpha_2)}{(u_1,u_1)}u_1=\frac{1}{3\sqrt{2}}(1,-4,1)^T$
+
+    (2).$Q=(u_1,u_2)$
+
+    $\alpha_1=3u_1$
+
+    $\alpha_2=\frac{5}{3}u_1-\frac{\sqrt{2}}{3}u_2$
+
+    $A=(u_1,u_2)\begin{pmatrix}
+        3 & \frac{5}{3}\\
+        0 & -\frac{\sqrt{2}}{3}
+    \end{pmatrix}$
+
+    (3).利用 $QR$ 分解,
+
+    $ x=R^{-1} Q^{T} b=\frac{1}{\sqrt{2}}\left(\begin{array}{cc}\frac{\sqrt{2}}{3} & -\frac{5}{3} \\0 & 3\end{array}\right)\left(\begin{array}{ccc}\frac{2}{3} & \frac{1}{3} & \frac{2}{3} \\-\frac{\sqrt{2}}{6} & \frac{2 \sqrt{2}}{3} & -\frac{\sqrt{2}}{6}\end{array}\right)\left(\begin{array}{c}12 \\6 \\8\end{array}\right)=\left(\begin{array}{l}4 \\2\end{array}\right)$.
+
+    (4).$R(A)^{\perp}=span{(1,0,-1)^T}$
+
+    易知$u_1,u_2 \perp R(A)^{\perp}$
+
+    $u_1^Tu_2=0 ||u_1||=||u_2||=1$
+
+    $u_{1}=(0,1,0)^{\mathrm{T}}, u_{2}=\left(\frac{1}{\sqrt{2}}, 0, \frac{1}{\sqrt{2}}\right)^{\mathrm{T}}  $是  $R(A)$  的标准正交基
+\end{solution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}
+    28. 求下列矩阵的$QR$分解
+
+    (1).$\begin{pmatrix}
+        0 & 1 & 1\\
+        1 & 1 & 0\\
+        1 & 0 & 0
+    \end{pmatrix}$
+\end{problem}
+\begin{solution}
+    解答过程同上题(2).
+
+    $Q=\begin{pmatrix}
+        0 & \frac{2}{\sqrt{6}} & \frac{1}{\sqrt{3}}\\
+        \frac{1}{\sqrt{2}} & \frac{2}{\sqrt{6}} & -\frac{1}{\sqrt{3}}\\
+        \frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{6}} & \frac{1}{\sqrt{3}}
+    \end{pmatrix}$
+
+    $R=\begin{pmatrix}
+        \sqrt{2} & \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}}\\
+        0 & \frac{3}{\sqrt{6}} & \frac{1}{\sqrt{6}}\\
+        0 & 0 & \frac{1}{\sqrt{3}}
+    \end{pmatrix}$
+\end{solution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}
+   30. 计算矩阵 $A=\begin{pmatrix}
+    1 & 0 \\
+    0 & 1 \\
+    1 & 1
+   \end{pmatrix}$
+   的奇异值分解和相应的四个子空间.
+\end{problem}
+
+\begin{solution}
+    奇异值分解:记A的奇异值分解:
+       $ A=v \cdot D \cdot u^{*}$    
+    
+        $A^{*}=\left(\begin{array}{lll}1 & 0 & 1 \\0 & 1 & 1\end{array}\right)$
+    
+        $A^{*} A=\left(\begin{array}{lll}1 & 0 & 1 \\0 & 1 & 1\end{array}\right)\left(\begin{array}{ll}1 & 0 \\0 & 1 \\1 & 1\end{array}\right)=\left(\begin{array}{ll}2 & 1 \\1 & 2\end{array}\right)=u D^{*} D  u^{*} $
+    
+        $\left|\lambda I-A^{*} A\right|=\left|\begin{array}{cc}\lambda-2 & 1 \\1 & \lambda-2\end{array}\right|=(\lambda-1)(\lambda-3)$ 
+    
+        可知  $D^{*} D=\left(\begin{array}{ll}3 & 0 \\0 & 1\end{array}\right)$
+
+        $\begin{array}{l}\sigma_{1}=\sqrt{3} \\\sigma_{2}=1\end{array}$
+    
+        求  $u:A^{*} A-I=\left(\begin{array}{cc}1 & 1 \\1 & 1\end{array}\right), \alpha_{1}=\frac{1}{\sqrt{2}}\left(\begin{array}{l}1 \\-1\end{array}\right)$ 
+    
+        $A^{*} A-3I=\left(\begin{array}{cc}-1 & 1 \\1 & -1\end{array}\right), \alpha_{2}=\frac{1}{\sqrt{2}}\left(\begin{array}{l}1 \\1\end{array}\right)$
+    
+        $\therefore u=\frac{1}{\sqrt{2}}\left(\begin{array}{cc}1 & 1 \\1 & -1\end{array}\right) $
+    
+        $D=\left(\begin{array}{ll}\sqrt{3} & 0 \\0 & 1 \\0 & 0\end{array}\right)$
+    
+
+        记  $\widetilde{V}$  为  $V $ 前两列构成的矩阵
+
+        由 $ A=V \cdot\left(\begin{array}{cc}\sqrt{3} & 0 \\0 & 1 \\0 & 0\end{array}\right) \cdot u^{*} $ 得 
+    
+        $A=\widetilde{V} \cdot\left(\begin{array}{ll}\sqrt{3} & 0 \\0 & 1\end{array}\right) \cdot u^{*} $
+    
+        $\therefore \widetilde{V}=A \cdot u \cdot\left(\begin{array}{l}\sqrt{3} \\1\end{array}\right)^{-1}=\left(\begin{array}{ll}1 & 0 \\0 & 1 \\1 & 1\end{array}\right) \cdot \frac{1}{\sqrt{2}}\left(\begin{array}{cc}1 & 1 \\1 & -1\end{array}\right) \cdot\left(\begin{array}{c}\frac{1}{\sqrt{3}} \\1\end{array}\right)=\frac{1}{\sqrt{2}}\left(\begin{array}{cc}1 & 1 \\1 & -1 \\2 & 0\end{array}\right) \cdot\left(\begin{array}{c}\frac{1}{3} \\1\end{array}\right)=\left(\begin{array}{cc}\frac{1}{\sqrt{6}} & \frac{1}{\sqrt{2}} \\\frac{1}{\sqrt{6}} & -\frac{1}{\sqrt{2}} \\\frac{2}{\sqrt{6}} & 0\end{array}\right) $
+    
+        将  $\widetilde{V}$  扩充成  $V$  .
+    
+        可得  $V=\left(\begin{array}{ccc}\frac{1}{\sqrt{6}} & \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{3}} \\ \frac{1}{\sqrt{6}} & -\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{3}} \\ \frac{2}{\sqrt{6}} & 0 & -\frac{1}{\sqrt{3}}\end{array}\right) $
+    
+        $\therefore A $ 的奇异值分解为: $ A=V \cdot D \cdot u^{*}=\left(\begin{array}{ccc}\frac{1}{\sqrt{6}} & \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{3}} \\ \frac{1}{\sqrt{6}} & -\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{3}} \\ \frac{2}{\sqrt{6}} & 0 & -\frac{1}{\sqrt{3}}\end{array}\right) \cdot\left(\begin{array}{cc}\sqrt{3} & 0 \\ 0 & 1 \\ 0 & 0\end{array}\right) \cdot\left(\begin{array}{cc}\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}}\end{array}\right) $
+
+        $A$的四个子空间:
+
+        $N(A)=\phi $
+
+        $N(A^{T})=span\left\{\left(\begin{array}{c}1 \\1 \\-1\end{array}\right)\right\}$
+
+        $R(A)=span\left\{\left(\begin{array}{c}1 \\0 \\1\end{array}\right),\left(\begin{array}{c}0 \\1 \\1\end{array}\right)\right\}$
+
+        $R(A^{T})=\mathbb{R}^2$
+
+\end{solution}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}
+    33. 设 $ A \in \mathbb{C}^{m \times n}$  的秩为 $ r>0$,$ A $ 的奇异值分解为 $ A=U \operatorname{diag}\left(s_{1}, \cdots, s_{r}, 0, \cdots, 0\right) V^{*}$ , 求矩阵 $ B=\left(\begin{array}{c}A \\ A\end{array}\right)  $的奇异值分解.
+\end{problem}
+
+\begin{solution}
+    $A=\mathbb{C}^{m \times n} $.
+
+    $ A $的奇异值分解为$  A=U \cdot \operatorname{diag}\left(s_{1}, s_{2} \cdots s_{r}, 0,0 \cdots 0\right) V^{*}$
+    
+    求  $B=\left(\begin{array}{l}A \\ A\end{array}\right)_{2 m \times n} $ 的奇异值分解,
+    
+    记 $ B=U \cdot D \cdot v^{*} $
+    
+    $B^{*}=v \cdot D^{*} \cdot u^{*}=\left(A^{*} A^{*}\right)$
+    
+    $B^{*} B=2 A^{*} A=V \cdot \operatorname{diag}\left(2 s_{1}^{2}, 2 s_{2}^{2} \cdots 2 s r^{2}, 0, \cdots 0\right) \cdot V^{*} =v \cdot D^{*} D \cdot v $
+    
+    $\therefore v=V, D=\left(\begin{array}{c}\sqrt{2} \operatorname{diag} \\0\end{array}\right)_{2 m \times n} $
+    
+    $B B^{*}=u \cdot D \cdot D^{*} \cdot u^{*} =u \cdot\left(\begin{array}{cc}2 d d^{*} & 0 \\0 & 0\end{array}\right) \cdot u^{*}=\left(\begin{array}{cc}U d d^{*} U^{*} & U d d^{*} U^{*} \\U d d^{*} U^{*} & U d d^{*} U^{*}\end{array}\right)=\left(\begin{array}{cc}A A^{*} & A A^{*} \\A A^{*} & A A^{*}\end{array}\right) $
+    
+    得 $ u=\left(\begin{array}{cc}\frac{U}{\sqrt{2}} & \frac{U}{\sqrt{2}} \\ \frac{U}{\sqrt{2}} & -\frac{U}{\sqrt{2}}\end{array}\right)_{2 n \times 2 m} $ 
+    
+    $\therefore B=\left(\begin{array}{l}A \\ A\end{array}\right)$  的奇异值分解为: $ B=u \cdot D \cdot v^{*}=\left(\begin{array}{cc}\frac{v}{\sqrt{2}} & \frac{v}{\sqrt{2}} \\ \frac{v}{\sqrt{2}} & -\frac{v}{\sqrt{2}}\end{array}\right)_{2m\times 2m} \cdot\left(\begin{array}{c}\sqrt{2} \text { diag } \\ 0\end{array}\right)_{2 m \times n} \cdot V_{n \times n} $
+\end{solution}
+
+% \begin{note}
+%     这里是注记. 
+% \end{note}
+
+\end{document}
