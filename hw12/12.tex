@@ -1,0 +1,82 @@
+\documentclass[12pt, a4paper, oneside]{ctexart}
+\usepackage{amsmath, amsthm, amssymb, bm, color, framed, graphicx, hyperref, mathrsfs}
+\usepackage{amsfonts}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lfoot{}%这条语句可以让页码出现在下方
+
+
+\title{\textbf{第十二次课程作业}}
+\author{张浩然 023082910001}
+\date{\today}
+\linespread{1.5}
+\definecolor{shadecolor}{RGB}{241, 241, 255}
+\newcounter{problemname}
+\newenvironment{problem}{\begin{shaded}\stepcounter{problemname}\par\noindent\textbf{题目\arabic{problemname}. }}{\end{shaded}\par}
+\newenvironment{solution}{\par\noindent\textbf{解答. }}{\par}
+\newenvironment{note}{\par\noindent\textbf{题目\arabic{problemname}的注记. }}{\par}
+
+\begin{document}
+
+\maketitle
+
+\begin{problem}
+    32. (1) 设$ A=\left(\begin{array}{cc}
+        0 & 0 \\
+        1 & -2
+        \end{array}\right) $, 求  $\mathrm{e}^{A}, \sin A, \cos A $ ;
+        
+        (2) 已知  $J=\left(\begin{array}{llll}
+            -2 & & & \\
+            & 1 & 1 & \\
+            & & 1 & \\
+            & & & 2
+            \end{array}\right) $, 求 $ \mathrm{e}^{J}, \sin J, \cos J$ . 
+\end{problem}
+
+
+\begin{solution}
+    
+\end{solution}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}
+    35. 对下列方阵  $A$ , 求矩阵函数  $\mathrm{e}^{A t} $ :
+(1)  $A=\left(\begin{array}{ccc}2 & -2 & 3 \\ 1 & 1 & 1 \\ 1 & 3 & -1\end{array}\right)$ 
+(2)  $A=\left(\begin{array}{ccc}0 & 1 & 0 \\ 0 & 0 & 1 \\ -8 & -12 & -6\end{array}\right)$ ,
+(3)  $A=\left(\begin{array}{ccc}-2 & 1 & 3 \\ 0 & -3 & 0 \\ 0 & 2 & -2\end{array}\right)$ .
+\end{problem}
+
+
+\begin{solution}
+    
+\end{solution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}
+    36. 求下列两类矩阵的矩阵函数:  $\cos A, \sin A, \mathrm{e}^{A}$  :
+
+    (1) $ A $ 为幂等矩阵;
+
+    (2)  $A $ 为对合矩阵 (即  $A^{2}=I $ ).
+\end{problem}
+\begin{solution}
+    
+\end{solution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}
+    37. 设函数矩阵 $ A(t)=\left(\begin{array}{ccc}
+        \sin t & \cos t & t \\
+        \frac{\sin t}{t} & \mathrm{e}^{t} & t^{2} \\
+        1 & 0 & t^{3}
+        \end{array}\right) $, 其中  $t \neq 0$ . 计算  $\lim _{t \rightarrow 0} A(t), \frac{\mathrm{d}}{\mathrm{d} t} A(t), \frac{\mathrm{d}^{2}}{\mathrm{~d} t^{2}} A(t) $. 
+\end{problem}
+
+\begin{solution}
+   
+\end{solution}
+
+% \begin{note}
+%     这里是注记. 
+% \end{note}
+
+\end{document}

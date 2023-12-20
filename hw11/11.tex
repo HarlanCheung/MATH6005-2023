@@ -1,0 +1,226 @@
+\documentclass[12pt, a4paper, oneside]{ctexart}
+\usepackage{amsmath, amsthm, amssymb, bm, color, framed, graphicx, hyperref, mathrsfs}
+\usepackage{amsfonts}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lfoot{}%这条语句可以让页码出现在下方
+
+
+\title{\textbf{第十一次课程作业}}
+\author{张浩然 023082910001}
+\date{\today}
+\linespread{1.5}
+\definecolor{shadecolor}{RGB}{241, 241, 255}
+\newcounter{problemname}
+\newenvironment{problem}{\begin{shaded}\stepcounter{problemname}\par\noindent\textbf{题目\arabic{problemname}. }}{\end{shaded}\par}
+\newenvironment{solution}{\par\noindent\textbf{解答. }}{\par}
+\newenvironment{note}{\par\noindent\textbf{题目\arabic{problemname}的注记. }}{\par}
+
+\begin{document}
+
+\maketitle
+
+\begin{problem}
+    2. 证明: 若  $x \in \mathbb{C}^{n}$ , 则
+    
+    (1)  $\|x\|_{2} \leqslant\|x\|_{1} \leqslant \sqrt{n}\|x\|_{2}$ ;
+    
+    (2)  $\|x\|_{\infty} \leqslant\|x\|_{1} \leqslant n\|x\|_{\infty}$ ;
+    
+    (3)  $\|x\|_{\infty} \leqslant\|x\|_{2} \leqslant \sqrt{n}\|x\|_{\infty}$ .
+\end{problem}
+
+
+\begin{solution}
+    (1). $x \in \mathbb{C}^n$
+
+    $||x||_{2}=\sqrt{\sum |x_i|^2}$
+
+    $||x||_{1}=\sum |x_i|$
+
+    $||x||_{1}^2=(\sum |x_i|)^2 \geqslant \sum|x_i|^2 =||x||_2^2$(当且仅当$x_i=0,i=1,2,3,\cdots,n$时等号成立)
+
+    由均值不等式
+
+    $\frac{\sum\left|x_{i}\right|}{n} \leqslant \sqrt{\frac{\sum\left|x_{i}\right|^{2}}{n}}$
+
+    即：$||x||_1 \leqslant \sqrt{n} \cdot ||x||_2$
+
+    $\therefore ||x||_2 \leqslant ||x||_1 \leqslant \sqrt{n} \cdot ||x||_2$
+
+    (2).
+
+
+    $\|x\|_{\infty}  =\max \left\{\left|x_{i}\right|\right\}$ 
+
+    记$\left|x_{k}\right|  =\max \left\{\left|x_{i}\right|\right\}$
+
+    则 $\|x\|_{\infty}  =\left|x_{k}\right|$ 
+
+    $\|x\|_{1}  =\left|x_{k}\right|+\sum_{i \neq k}^{n}\left|x_{i}\right| $
+    
+    $n\|x\|_{\infty}  =n\left|x_{k}\right| \geq \sum_{i=1}^{n}\left|x_{i}\right|$
+    
+    
+    
+    可知 $\|x\|_{\infty} \leq\|x\|_{1} \leq n \cdot\|x\|_{\infty}$
+
+   (3). 记$\|x\|_{\infty}  =\left|x_{k}\right|$ 
+
+        则 $\|x\|_{\infty}^{2}  =\left|x_{k}\right|^{2}$ 
+
+        $\|x\|_{2}^{2}  =\sum\left|x_{i}\right|^{2} \geq\left|x_{k}\right|^{2}$ 
+
+        $\left(\sqrt{n}\left\|_{x}\right\|_{\infty}\right)^{2}  =n \cdot\left|x_{k}\right|^{2} \geq \sum_{i=1}^{n}\left|x_{i}\right|^{2} $
+    
+        $\therefore\|x\|_{\infty}  \leq\|x\|_{2} \leq \sqrt{n}\|x\|_{\infty}$
+
+\end{solution}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}
+    11. 验证矩阵的极大列和范数与极大行和范数均满足次乘性.
+\end{problem}
+
+
+\begin{solution}
+    极大列和范数的次乘性证明
+
+    对于矩阵  $A \in \mathbb{R}^{m \times n} $ 和  $B \in \mathbb{R}^{n \times p} $, 我们有:
+
+    $\|A B\|_{1}=\max _{1 \leq k \leq p} \sum_{i=1}^{m}\left|\sum_{j=1}^{n} a_{i j} b_{j k}\right|$
+
+
+    利用三角不等式和绝对值的性质, 可以得到:
+
+    $\sum_{i=1}^{m}\left|\sum_{j=1}^{n} a_{i j} b_{j k}\right| \leq \sum_{i=1}^{m} \sum_{j=1}^{n}\left|a_{i j}\right|\left|b_{j k}\right|$
+
+
+    接着, 我们可以利用$ Holder $不等式, 得到:
+
+    $\|A B\|_{1} \leq \max _{1 \leq k \leq p} \sum_{j=1}^{n}\left|b_{j k}\right| \max _{1 \leq j \leq n} \sum_{i=1}^{m}\left|a_{i j}\right|$
+
+
+    由于  $\max _{1 \leq k \leq p} \sum_{j=1}^{n}\left|b_{j k}\right| $ 是  $B $ 的极大列和范数, $ \max _{1 \leq j \leq n} \sum_{i=1}^{m}\left|a_{i j}\right| $ 是  $A $ 的极大列和范数, 因此我们有:
+
+    $\|A B\|_{1} \leq\|A\|_{1}\|B\|_{1}$
+
+    这证明了极大列和范数满足次乘性.
+
+    极大行和范数同理.
+\end{solution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}
+    26. 设 $ A_{k}=\left(\begin{array}{cc}\frac{1}{k^{2}} & \frac{k^{2}+k}{k^{2}+1} \\2 & \left(1-\frac{2}{k}\right)^{k}\end{array}\right) $, 求 $ \lim\limits_{k \to \infty}  A_{k} $.
+\end{problem}
+\begin{solution}
+        $A_{k}=\left(\begin{array}{cc}
+        \frac{1}{k^{2}} & \frac{k^{2}+k}{k^{2}+1} \\
+        2 & \left(1-\frac{2}{k}\right)^{k}
+        \end{array}\right)
+        $
+        
+        $\lim _{k \rightarrow \infty} \frac{1}{k^{2}}=0 $
+
+        $\lim _{k \rightarrow \infty} \frac{k^{2}+k}{k^{2}+1}=1 $
+
+        $\lim _{k \rightarrow \infty}\left(1-\frac{2}{k}\right)^{k}=\left(\lim _{k \rightarrow \infty}\left(1-\frac{2}{k}\right)^{\frac{k}{2}}\right)^{2}=\frac{1}{e^{2}} $
+
+        $\therefore \lim _{k \rightarrow \infty} A_{k}=\left(\begin{array}{cc}
+        0 & 1 \\
+        2 & \frac{1}{e^{2}}
+        \end{array}\right)$
+\end{solution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}
+   28. 若 $ \lim\limits_{n \to \infty}  A_{n}=B$,则$B$为幂等矩阵.
+\end{problem}
+
+\begin{solution}
+    $\lim _{n \rightarrow \infty} A^{n}=B $
+
+    $B^{2}=\left(\lim _{n \rightarrow \infty} A^{n}\right)^{2}=\lim _{n \rightarrow \infty} A^{2 n}=B$
+\end{solution}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{problem}
+    30. 设 $ A=\left(\begin{array}{cc}2 & -\frac{1}{2} \\2 & 0\end{array}\right)$ , 求 $ \sum_{k=0}^{\infty} \frac{A^{k}}{2^{k}} $. 
+\end{problem}
+
+\begin{solution}
+
+        
+        $|\lambda I-A|=\left|\begin{array}{cc}
+        \lambda-2 & \frac{1}{2} \\
+        -2 & \lambda
+        \end{array}\right|=\lambda(\lambda-2)+1=(\lambda-1)^{2} $
+
+        $A-I=\left(\begin{array}{cc}
+        1 & -\frac{1}{2} \\
+        2 & -1
+        \end{array}\right) \quad r(A-I)=1 $
+
+        $m_{A}(\lambda)=(\lambda-1)^{2}$
+        
+        
+        
+        则  $f $ 在 $A$  的谱上的数值为  $\left\{f(1) , f^{\prime}(1)\right\} $
+        
+        设  $f(t)=\sum_{k=0}^{\infty} \frac{t^{k}}{2^{k}}, g(t)=a_{0}+a_{1} t   $
+        
+        $f(A)=g(A) \Leftrightarrow f $. $g $ 在A 的谱上的数值相等
+        
+        
+        $f(1)=2$ 
+       
+        $ f^{\prime}(1)=\sum_{k=1}^{\infty} \frac{k \cdot 1^{k-1}}{2^{k}}=\sum_{k=1}^{\infty} \frac{k}{2^{k}}=\lim _{n \rightarrow \infty}\left(\left(\sum_{i=0}^{n} \frac{1}{2^{i}}\right)-\frac{n}{2^{n}}\right)=2 $
+        
+        $\therefore  g(1)=a_{0}+a_{1}=2$
+        
+        $g^{\prime}(1)=a_{1}=2 $
+        
+        $\therefore a_{0}=0 $
+        
+        $\sum_{k=0}^{\infty} \frac{A^{k}}{2^{k}}=f(A)=g(A)=2 A=\left(\begin{array}{cc}
+        4 & -1 \\
+        4 & 0
+        \end{array}\right)$
+        
+\end{solution}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}
+    31.设 $A=\left(\begin{array}{ccc}
+        -0.6 & 1 & 0.8 \\
+        0 & 0.2 & 0 \\
+        -0.6 & 1 & 0.8
+        \end{array}\right) $. 试判断 $ A $是否幂收敛. 
+\end{problem}
+
+\begin{solution}
+    $A=\left(\begin{array}{ccc}
+        -0.6 & 1 & 0.8 \\
+        0 & 0.2 & 0 \\
+        -0.6 & 1 & 0.8
+        \end{array}\right) $
+
+        $|\lambda I-A|=\left|\begin{array}{ccc}
+        \lambda+0.6 & -1 & -0.8 \\
+        0 & \lambda-0.2 & 0 \\
+        0.6 & -1 & \lambda-0.8
+        \end{array}\right|=(\lambda-0.2)\left|\begin{array}{cc}
+        \lambda+0.6 & -0.8 \\
+        0.6 & \lambda-0.8
+    \end{array}\right|=\lambda(\lambda-0.2)^{2}$
+
+    $|\lambda|<1$
+    
+    $\therefore$ $J_A$幂收敛$\Leftrightarrow A$幂收敛   。  
+        
+\end{solution}
+% \begin{note}
+%     这里是注记. 
+% \end{note}
+
+\end{document}
