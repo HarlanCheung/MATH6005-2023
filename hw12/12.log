@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.9.18)  20 DEC 2023 10:16
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.9.18)  20 DEC 2023 20:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -543,9 +543,23 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 LaTeX Font Info:    Trying to load font information for U+rsfs on input line 22.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
-) [1
+)
+Overfull \hbox (37.25946pt too wide) in paragraph at lines 74--87
+[]$[] \OML/cmm/m/it/12 A \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 P [] JP[] \OT1/cmr/m/n/12 = [] [] [] = []$ 
+ []
+
+
+Overfull \hbox (44.2714pt too wide) in paragraph at lines 88--101
+[]$[] \OML/cmm/m/it/12 A \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 P [] JP[] \OT1/cmr/m/n/12 = [] [] [] = []$ 
+ []
+
+[1
 
 ]
+Overfull \hbox (7.37964pt too wide) in paragraph at lines 102--120
+[]\TU/lmr/m/n/12 (2) $[][] \OT1/cmr/m/n/12 = []$ $[] \OML/cmm/m/it/12 J \OT1/cmr/m/n/12 = []$ $[] \OML/cmm/m/it/12 J \OT1/cmr/m/n/12 =
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -553,17 +567,42 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[2] (./12.aux)
+[2]
+Overfull \hbox (15.78703pt too wide) in paragraph at lines 154--174
+[]$\OML/cmm/m/it/12 e[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 Pe[]P[] \OT1/cmr/m/n/12 = [] [] [] [] =
+ []
+
+
+Overfull \hbox (0.10808pt too wide) in paragraph at lines 175--181
+[]\TU/lmr/m/n/12 (2) \TU/SongtiSCLight(0)/m/n/12 解 答 过 程 同 上 $\OML/cmm/m/it/12 e[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 e[] []$ 
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[3]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[4] (./12.aux)
 Package rerunfilecheck Info: File `12.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
  15965 strings out of 476683
  349680 string characters out of 5804047
- 1857018 words of memory out of 5000000
+ 1865018 words of memory out of 5000000
  35965 multiletter control sequences out of 15000+600000
  528216 words of font info for 109 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 89i,11n,97p,1184b,357s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 89i,12n,97p,1184b,372s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 12.pdf (2 pages).
+Output written on 12.pdf (4 pages).

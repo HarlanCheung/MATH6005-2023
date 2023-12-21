@@ -36,7 +36,87 @@
 
 
 \begin{solution}
+    (1) $|\lambda I-A|=\lambda(\lambda+2)$
+
+    $\therefore \lambda_1=0, \lambda_2=-2$
+
+    $\therefore J=\left(\begin{array}{ll}
+        0 & 0 \\
+        0 & -2
+        \end{array}\right)$
     
+    $AP=PJ$
+
+    $P=\begin{pmatrix}
+        2 & 0 \\
+        1 & 1
+    \end{pmatrix}
+    P_{-1}=\begin{pmatrix}
+        \frac{1}{2} & 0 \\
+        -\frac{1}{2} & 1
+    \end{pmatrix}$
+
+    $\therefore \mathrm{e}^{A}=P\mathrm{e}^{J}P^{-1}=\begin{pmatrix}
+        2 & 0 \\
+        1 & 1
+    \end{pmatrix}\begin{pmatrix}
+        \mathrm{e}^{0} & 0 \\
+        0 & \mathrm{e}^{-2}
+    \end{pmatrix}\begin{pmatrix}
+        \frac{1}{2} & 0 \\
+        -\frac{1}{2} & 1
+    \end{pmatrix}=\begin{pmatrix}
+        1 & 0 \\
+        \frac{1-\mathrm{e}^{-2}}{2} & \mathrm{e}^{-2}
+    \end{pmatrix}
+    $
+
+    $\sin A=P\sin J P^{-1}=\begin{pmatrix}
+        2 & 0 \\
+        1 & 1   
+    \end{pmatrix}\begin{pmatrix}
+        \sin 0 & 0 \\
+        0 & \sin (-2)
+    \end{pmatrix}\begin{pmatrix}
+        \frac{1}{2} & 0 \\
+        -\frac{1}{2} & 1
+    \end{pmatrix}=\begin{pmatrix}
+        0 & 0 \\
+        \frac{\sin 2}{2} & -\sin 2
+    \end{pmatrix}$
+
+    $\cos A=P\cos J P^{-1}=\begin{pmatrix}
+        2 & 0 \\
+        1 & 1
+    \end{pmatrix}\begin{pmatrix}
+        \cos 0 & 0 \\
+        0 & \cos (-2)
+    \end{pmatrix}\begin{pmatrix}
+        \frac{1}{2} & 0 \\
+        -\frac{1}{2} & 1
+    \end{pmatrix}=\begin{pmatrix}
+        1 & 0 \\
+        \frac{1-\cos 2}{2} & \cos 2
+    \end{pmatrix}$
+
+    (2) $\mathrm{e}^J=\begin{pmatrix}
+        \mathrm{e}^{-2} & & & \\
+        & \mathrm{e} & \mathrm{e} & \\
+        & & \mathrm{e} & \\
+        & & & \mathrm{e}^{2}
+    \end{pmatrix}$
+    $\sin J=\begin{pmatrix}
+        \sin (-2) & & & \\
+        & \sin 1 & \cos 1 & \\
+        & & \sin 1 & \\
+        & & & \sin 2
+    \end{pmatrix}$
+    $\cos J=\begin{pmatrix}
+        \cos (-2) & & & \\
+        & \cos 1 & -\sin 1 & \\
+        & & \cos 1 & \\
+        & & & \cos 2
+    \end{pmatrix}$
 \end{solution}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -49,7 +129,62 @@
 
 
 \begin{solution}
-    
+    (1)$|\lambda I-A|=(\lambda+2)(\lambda-1)(\lambda-3)$
+
+    $\therefore J=\begin{pmatrix}
+        -2 & & \\
+        & 1 & \\
+        & & 3
+    \end{pmatrix}$
+
+    $AP=PJ$
+
+    $P=\begin{pmatrix}
+        11 & -1 & 1 \\
+        1 & 1 & 1 \\
+        -14 & 1 & 1
+    \end{pmatrix}$
+
+    $P^{-1}=\frac{1}{30}\begin{pmatrix}
+        0 & 2 & -2 \\
+        -15 & 25 & -10 \\
+        15 & 3 & 12
+    \end{pmatrix}$
+
+    $e^{At}=Pe^{Jt}P^{-1}=\frac{1}{30}\begin{pmatrix}
+        11 & -1 & 1 \\
+        1 & 1 & 1 \\
+        -14 & 1 & 1
+    \end{pmatrix}\begin{pmatrix}
+        e^{-2t} & & \\
+        & e^{t} & \\
+        & & e^{3t}
+    \end{pmatrix}
+    \begin{pmatrix}
+        0 & 2 & -2 \\
+        -15 & 25 & -10 \\
+        15 & 3 & 12
+    \end{pmatrix}
+    =\frac{1}{30}
+    \begin{pmatrix}
+       15e^t+15e^3t & 22e^{-2t}-25e^{t}+3e^{3t} & -22e^{-2t}+10e^{t}+12e^{3t} \\ 
+         -15e^t+15e^{3t} & 2e^{-2t}+25e^{t}+3e^{3t} & -2e^{-2t}-10e^{t}+12e^{3t} \\
+            -15e^t+15e^{3t} & -28e^{-2t}+25e^{t}+3e^{3t} & 28e^{-2t}-10e^{t}+12e^{3t}
+    \end{pmatrix}$
+
+    (2)解答过程同上
+    $e^{At}=e^{-2t}\begin{pmatrix}
+        1+2t+2t^2 & t+2t^2 & \frac{t^2}{2} \\
+        -4t^2 & 1+2t-4t^2 & t-t^2 \\
+        -8t+8t^2 & -12t+8t^2 & 1-4t+2t^2
+    \end{pmatrix}$
+
+    (3)解答过程同上
+    $e^{At}=\begin{pmatrix}
+        e^{-2t} & -5e^{-2t}+6te^{-2t}+5e^{-3t} & 3te^{-2t} \\
+        0 & e^{-3t} & 0 \\
+        0 & 2e^{-2t}-2e^{-3t} & e^{-2t}
+    \end{pmatrix}$
 \end{solution}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{problem}
@@ -60,7 +195,25 @@
     (2)  $A $ 为对合矩阵 (即  $A^{2}=I $ ).
 \end{problem}
 \begin{solution}
-    
+    (1) $A^2=A$
+
+    $\cos A = I -\frac{A^2}{2!}+\frac{A^4}{4!}-\frac{A^6}{6!}\cdots=I+A(-\frac{1}{2!}+\frac{1}{4!}-\frac{1}{6!}\cdots)=I+A(\cos1-1)$
+
+    $\sin A=A-\frac{A^3}{3!}+\frac{A^5}{5!}\cdots=A(1-\frac{1}{3!}+\frac{1}{5!}\cdots)=A\sin1$
+
+    $e^A=I+A+\frac{A^2}{2!}+\frac{A^3}{3!}+\cdots=I+A(1+\frac{1}{2!}+\frac{1}{3!}+\cdots)=I+A(e-1)$
+
+    (2) $A^2=I$
+
+    $\cos A=I\cos1$
+
+    $\sin A=A\sin 1$
+
+    $e^A=A(1+\frac{1}{3!}+\frac{1}{5!}+\cdots)+I(1+\frac{1}{2!}+\frac{1}{4!}+\cdots)$
+
+    两边同时左乘$A$,然后二式相加,
+
+    $e^A=eI$
 \end{solution}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{problem}
@@ -72,9 +225,30 @@
 \end{problem}
 
 \begin{solution}
-   
-\end{solution}
+    
+       $ \lim _{t \rightarrow 0} A(t)=\left(\begin{array}{lll}
+        0 & 1 & 0 \\
+        1 & 1 & 0 \\
+        1 & 0 & 0
+        \end{array}\right) $
 
+        $
+        \frac{d A(t)}{d t}=\left(\begin{array}{ccc}
+        \cos t & -\sin t & 1 \\
+        \frac{t \cos t-\sin t}{t^{2}} & e^{t} & 2 t \\
+        0 & 0 & 3 t^{2}
+        \end{array}\right) $
+        
+        $
+        \frac{d^{2}}{d t^{2}} A(t)=\left(\begin{array}{ccc}
+        -\sin t & -\cos t & 0 \\
+        \frac{-t^{2} \sin t-2 t \cos t+2 \sin t}{t^{3}} & e^{t} & 2 \\
+        0 & 0 & 6 t
+        \end{array}\right)
+       $
+
+    
+\end{solution}
 % \begin{note}
 %     这里是注记. 
 % \end{note}
